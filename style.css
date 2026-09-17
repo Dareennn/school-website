@@ -2154,3 +2154,344 @@ a:hover {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+.cycle-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.cycle-image a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s ease;
+}
+
+
+/* Zoom when hovering the image */
+
+.cycle-card:hover .cycle-image a img {
+  transform: scale(1.08);
+}
+
+
+/* ------------------------------------------------------------
+   Cycle detail section
+------------------------------------------------------------ */
+
+.cycle-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 6vw;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 110px 7vw 130px;
+
+  align-items: center;
+}
+
+
+/* ------------------------------------------------------------
+   Large image
+------------------------------------------------------------ */
+
+.cycle-details-image {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+
+
+.cycle-details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform .9s ease;
+}
+
+
+.cycle-details-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* ------------------------------------------------------------
+   Text content
+------------------------------------------------------------ */
+
+.cycle-details-content {
+  max-width: 580px;
+}
+
+
+.cycle-details-content .kicker {
+  margin-bottom: 18px;
+}
+
+
+.cycle-details-content h2 {
+  font: 500 clamp(38px, 4.5vw, 65px) var(--display);
+
+  line-height: .95;
+
+  letter-spacing: -.04em;
+
+  margin: 0 0 28px;
+}
+
+
+.cycle-details-content p {
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: #626772;
+
+  margin: 0 0 20px;
+}
+
+
+/* ------------------------------------------------------------
+   Objectives title
+------------------------------------------------------------ */
+
+.cycle-details-content h3 {
+  font: 500 28px var(--display);
+
+  margin: 38px 0 20px;
+}
+
+
+/* ------------------------------------------------------------
+   Objectives list
+------------------------------------------------------------ */
+
+.cycle-details-content ul {
+  margin: 0 0 35px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.cycle-details-content li {
+  position: relative;
+
+  padding: 11px 0 11px 25px;
+
+  border-bottom: 1px solid #c9cacc;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  color: var(--ink);
+}
+
+
+.cycle-details-content li::before {
+  content: "—";
+
+  position: absolute;
+
+  left: 0;
+
+  color: var(--red);
+
+  font-family: var(--mono);
+}
+
+
+/* ------------------------------------------------------------
+   Registration button
+------------------------------------------------------------ */
+
+.cycle-details-content .cycle-apply {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  border: 1px solid var(--blue);
+
+  color: var(--blue);
+
+  font: 500 10px var(--mono);
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  transition:
+    background .25s,
+    color .25s,
+    border-color .25s;
+}
+
+
+.cycle-details-content .cycle-apply:hover {
+  background: var(--red);
+
+  border-color: var(--red);
+
+  color: #fff;
+}
+
+
+/* ------------------------------------------------------------
+   Back to cycles
+------------------------------------------------------------ */
+
+.cycle-back {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 7vw 100px;
+}
+
+
+.cycle-back a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font: 500 10px var(--mono);
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  color: var(--ink);
+
+  border-bottom: 1px solid #999;
+
+  padding-bottom: 8px;
+
+  transition:
+    color .25s,
+    border-color .25s;
+}
+
+
+.cycle-back a:hover {
+  color: var(--red);
+
+  border-color: var(--red);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 950px) {
+
+  .cycle-details {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 90px 7vw 100px;
+  }
+
+
+  .cycle-details-image {
+    height: 500px;
+  }
+
+
+  .cycle-details-content {
+    max-width: 700px;
+  }
+
+
+  .cycle-details-content h2 {
+    font-size: clamp(40px, 7vw, 65px);
+  }
+
+
+  .cycle-back {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-bottom: 80px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 560px) {
+
+  .cycle-details {
+    gap: 35px;
+
+    padding: 70px 6vw 80px;
+  }
+
+
+  .cycle-details-image {
+    height: 350px;
+  }
+
+
+  .cycle-details-content h2 {
+    font-size: clamp(35px, 11vw, 52px);
+
+    margin-bottom: 22px;
+  }
+
+
+  .cycle-details-content p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .cycle-details-content h3 {
+    font-size: 25px;
+
+    margin-top: 32px;
+  }
+
+
+  .cycle-details-content li {
+    font-size: 13px;
+
+    padding: 10px 0 10px 22px;
+  }
+
+
+  .cycle-details-content .cycle-apply {
+    width: 100%;
+
+    min-height: 48px;
+  }
+
+
+  .cycle-back {
+    padding: 0 6vw 70px;
+  }
+
+}
