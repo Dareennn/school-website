@@ -25,30 +25,37 @@ async function loadComponent(containerId, file) {
     container.innerHTML = await response.text();
 
 
-    // Initialize loader AFTER loader.html has loaded
+    // =================================================
+    // HIDE LOADER AFTER IT HAS BEEN LOADED
+    // =================================================
+
     if (containerId === "loader-container") {
 
       const loader = document.getElementById("loader");
 
       if (loader) {
 
-        window.addEventListener("load", () => {
+        setTimeout(() => {
 
-          setTimeout(() => {
-            loader.classList.add("hide");
-          }, 1000);
+          loader.classList.add("hide");
 
-        });
+        }, 1000);
 
       }
 
     }
 
 
-    // Initialize navigation AFTER header.html has loaded
+    // =================================================
+    // INITIALIZE NAVIGATION AFTER HEADER LOAD
+    // =================================================
+
     if (containerId === "header-container") {
 
       initializeNavigation();
+
+      // Update header state immediately
+      scrollFX();
 
     }
 
@@ -231,8 +238,7 @@ function scrollFX() {
       denom > 0
         ? Math.min(
           Math.max(
-            (innerHeight - r.top) /
-            denom,
+            (innerHeight - r.top) / denom,
             0
           ),
           1
@@ -374,7 +380,6 @@ timelineButtons.forEach(button => {
 
   button.onclick = () => {
 
-
     timelineButtons.forEach(x => {
 
       x.classList.remove("active");
@@ -402,28 +407,21 @@ timelineButtons.forEach(button => {
 
     setTimeout(() => {
 
-
       if (year) {
-
         year.textContent =
           button.dataset.year;
-
       }
 
 
       if (yearTitle) {
-
         yearTitle.textContent =
           button.dataset.title;
-
       }
 
 
       if (yearText) {
-
         yearText.textContent =
           button.dataset.text;
-
       }
 
 
@@ -434,13 +432,10 @@ timelineButtons.forEach(button => {
       ].forEach(x => {
 
         if (x) {
-
           x.style.opacity = 1;
-
         }
 
       });
-
 
     }, 220);
 
