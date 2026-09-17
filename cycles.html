@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,17 @@
   <title>Les Cycles — Notre-Dame de la Délivrande</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="inner-page">
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <div class="school-logo"><img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo"></div>
+      <div class="school-logo"><img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo">
+      </div>
       <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
       <strong>Al-Daher</strong>
       <div class="loader-line"><i></i></div>
@@ -43,23 +48,110 @@
     </div>
   </header>
 
-<main class="inner-main">
-<section class="page-hero light-page"><div><p class="kicker">02 — Les cycles</p><h1>Grandir avec<br><i>confiance.</i></h1><p>Un parcours adapté à chaque âge, de la maternelle au secondaire.</p></div></section>
-<section class="cycles section-light">
-  <div class="cycle-grid">
-    <article class="cycle-card"><div class="cycle-image"><img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=85" alt="Maternelle"></div><div class="cycle-info"><span>01</span><h3>Maternelle</h3><p>Les premiers apprentissages dans un environnement joyeux et sécurisant.</p><b>↗</b></div></article>
-    <article class="cycle-card"><div class="cycle-image"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85" alt="Primaire"></div><div class="cycle-info"><span>02</span><h3>Primaire</h3><p>Développer les connaissances, la curiosité et le plaisir d'apprendre.</p><b>↗</b></div></article>
-    <article class="cycle-card"><div class="cycle-image"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85" alt="Préparatoire"></div><div class="cycle-info"><span>03</span><h3>Préparatoire</h3><p>Grandir en autonomie, en responsabilité et en confiance.</p><b>↗</b></div></article>
-    <article class="cycle-card"><div class="cycle-image"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85" alt="Secondaire"></div><div class="cycle-info"><span>04</span><h3>Secondaire</h3><p>Préparer l'avenir avec ambition, ouverture et solidité académique.</p><b>↗</b></div></article>
-  </div>
-</section>
-</main>
+  <main class="inner-main">
+    <section class="page-hero light-page">
+      <div>
+        <p class="kicker">02 — Les cycles</p>
+        <h1>Grandir avec<br><i>confiance.</i></h1>
+        <p>Un parcours adapté à chaque âge, de la maternelle au secondaire.</p>
+      </div>
+    </section>
+    <!-- ============================================================
+     Remplace <section class="cycles section-light"> ... </section>
+     dans cycles.html.
+     ============================================================ -->
+
+    <section class="cycles section-light" aria-labelledby="cycles-titre">
+      <h2 id="cycles-titre" class="sr-only">Nos quatre cycles</h2>
+
+      <div class="cycle-grid">
+
+        <article class="cycle-card">
+          <div class="cycle-image">
+            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80"
+              srcset="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=400&q=80 400w,
+                  https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80 800w,
+                  https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 560px) 46vw, (max-width: 950px) 45vw, 25vw" alt="" decoding="async">
+          </div>
+          <div class="cycle-info">
+            <span>01</span>
+            <h3>Maternelle</h3>
+            <p>Les premiers apprentissages dans un environnement joyeux et sécurisant.</p>
+            <a class="cycle-apply" href="admission.html?cycle=maternelle#formulaire">
+              S'inscrire<span class="sr-only"> en maternelle</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="cycle-card">
+          <div class="cycle-image">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+              srcset="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=400&q=80 400w,
+                  https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80 800w,
+                  https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 560px) 46vw, (max-width: 950px) 45vw, 25vw" alt="" loading="lazy" decoding="async">
+          </div>
+          <div class="cycle-info">
+            <span>02</span>
+            <h3>Primaire</h3>
+            <p>Développer les connaissances, la curiosité et le plaisir d'apprendre.</p>
+            <a class="cycle-apply" href="admission.html?cycle=primaire#formulaire">
+              S'inscrire<span class="sr-only"> en primaire</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="cycle-card">
+          <div class="cycle-image">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+              srcset="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80 400w,
+                  https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80 800w,
+                  https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 560px) 46vw, (max-width: 950px) 45vw, 25vw" alt="" loading="lazy" decoding="async">
+          </div>
+          <div class="cycle-info">
+            <span>03</span>
+            <h3>Préparatoire</h3>
+            <p>Grandir en autonomie, en responsabilité et en confiance.</p>
+            <a class="cycle-apply" href="admission.html?cycle=preparatoire#formulaire">
+              S'inscrire<span class="sr-only"> en préparatoire</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="cycle-card">
+          <div class="cycle-image">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+              srcset="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80 400w,
+                  https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80 800w,
+                  https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 560px) 46vw, (max-width: 950px) 45vw, 25vw" alt="" loading="lazy" decoding="async">
+          </div>
+          <div class="cycle-info">
+            <span>04</span>
+            <h3>Secondaire</h3>
+            <p>Préparer l'avenir avec ambition, ouverture et solidité académique.</p>
+            <a class="cycle-apply" href="admission.html?cycle=secondaire#formulaire">
+              S'inscrire<span class="sr-only"> en secondaire</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-top">
       <div class="footer-brand"><span>NOTRE-DAME</span><em>DE LA DÉLIVRANDE · Al-Daher</em></div>
       <div class="footer-tag">Joie.<br>Bonheur.<br>Servir.</div>
-      <div class="footer-address">Daher, 5 Habib Shalaby, Berket AZ Zatli, Bab El Sharia, Gouvernorat du Caire<br>(02) 2415 5192</div>
+      <div class="footer-address">Daher, 5 Habib Shalaby, Berket AZ Zatli, Bab El Sharia, Gouvernorat du Caire<br>(02)
+        2415 5192</div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Notre-Dame de la Délivrande</span>
@@ -69,4 +161,5 @@
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
