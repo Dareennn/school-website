@@ -25,13 +25,18 @@ async function loadComponent(containerId, file) {
     container.innerHTML = await response.text();
 
     if (containerId === "loader-container") {
-
       const loader = document.getElementById("loader");
 
       if (loader) {
-        loader.classList.add("hide");
-      }
+        console.log("LOADER FOUND");
 
+        setTimeout(() => {
+          loader.classList.add("hide");
+          console.log("LOADER HIDDEN");
+        }, 1000);
+      } else {
+        console.log("LOADER NOT FOUND");
+      }
     }
 
     // =================================================
