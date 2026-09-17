@@ -25,10 +25,6 @@ async function loadComponent(containerId, file) {
     container.innerHTML = await response.text();
 
 
-    // =================================================
-    // HIDE LOADER AFTER IT HAS BEEN LOADED
-    // =================================================
-
     if (containerId === "loader-container") {
 
       const loader = document.getElementById("loader");
@@ -36,15 +32,12 @@ async function loadComponent(containerId, file) {
       if (loader) {
 
         setTimeout(() => {
-
           loader.classList.add("hide");
-
         }, 1000);
 
       }
 
     }
-
 
     // =================================================
     // INITIALIZE NAVIGATION AFTER HEADER LOAD
