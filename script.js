@@ -10,9 +10,7 @@ async function loadComponent(containerId, file) {
 
   const container = document.getElementById(containerId);
 
-  if (!container) {
-    return;
-  }
+  if (!container) return;
 
   try {
 
@@ -26,10 +24,38 @@ async function loadComponent(containerId, file) {
 
     container.innerHTML = await response.text();
 
+
+    // Initialize loader AFTER loader.html has loaded
+    if (containerId === "loader-container") {
+
+      const loader = document.getElementById("loader");
+
+      if (loader) {
+
+        window.addEventListener("load", () => {
+
+          setTimeout(() => {
+            loader.classList.add("hide");
+          }, 1000);
+
+        });
+
+      }
+
+    }
+
+
+    // Initialize navigation AFTER header.html has loaded
+    if (containerId === "header-container") {
+
+      initializeNavigation();
+
+    }
+
   } catch (error) {
 
     console.error(
-      `Error loading component ${file}:`,
+      `Error loading ${file}:`,
       error
     );
 
@@ -38,7 +64,10 @@ async function loadComponent(containerId, file) {
 }
 
 
-// Load shared HTML files from the components folder
+// =====================================================
+// LOAD HEADER / FOOTER / LOADER
+// =====================================================
+
 loadComponent(
   "loader-container",
   "components/loader.html"
@@ -56,20 +85,54 @@ loadComponent(
 
 
 // =====================================================
-// LOADER
+// NAVIGATION
 // =====================================================
 
-const loader = $("#loader");
+function initializeNavigation() {
 
-if (loader) {
+  const nav = $("#nav");
 
-  addEventListener("load", () => {
+  if (!nav) return;
 
-    setTimeout(() => {
 
-      loader.classList.add("hide");
+  const current =
+    location.pathname
+      .split("/")
+      .pop() ||
+    "index.html";
 
-    }, 1000);
+
+  const cyclePages = [
+    "maternelle.html",
+    "primaire.html",
+    "preparatoire.html",
+    "secondaire.html"
+  ];
+
+
+  $$(".nav-links a").forEach(a => {
+
+    const href =
+      a.getAttribute("href");
+
+
+    // Normal page
+    if (href === current) {
+
+      a.classList.add("active");
+
+    }
+
+
+    // Keep Cycles active on individual cycle pages
+    if (
+      cyclePages.includes(current) &&
+      href === "cycles.html"
+    ) {
+
+      a.classList.add("active");
+
+    }
 
   });
 
@@ -77,10 +140,9 @@ if (loader) {
 
 
 // =====================================================
-// NAVIGATION + SCROLL PROGRESS
+// NAVIGATION + SCROLL EFFECTS
 // =====================================================
 
-const nav = $("#nav");
 const progress = $("#progress");
 
 
@@ -89,7 +151,9 @@ function scrollFX() {
   const y = scrollY;
 
 
-  // Add/remove scrolled class from navigation
+  // Header
+  const nav = $("#nav");
+
   if (nav) {
 
     nav.classList.toggle(
@@ -100,33 +164,37 @@ function scrollFX() {
   }
 
 
-  // Scroll progress bar
+  // Progress bar
   if (progress) {
 
     const max =
       document.documentElement.scrollHeight -
       innerHeight;
 
+
     progress.style.width =
-      (max > 0
-        ? y / max * 100
-        : 0
+      (
+        max > 0
+          ? y / max * 100
+          : 0
       ) + "%";
 
   }
 
 
-  // Parallax elements
+  // Parallax
   $$("[data-parallax]").forEach(el => {
 
     const r =
       el.parentElement.getBoundingClientRect();
+
 
     const a =
       (
         innerHeight / 2 -
         (r.top + r.height / 2)
       ) * .035;
+
 
     el.style.transform =
       `translate3d(0,${a}px,0) scale(1.04)`;
@@ -138,8 +206,11 @@ function scrollFX() {
   // FACILITIES HORIZONTAL SCROLL
   // ===================================================
 
-  const tr = $(".facility-track");
-  const sec = $(".facilities");
+  const tr =
+    $(".facility-track");
+
+  const sec =
+    $(".facilities");
 
 
   if (
@@ -150,6 +221,7 @@ function scrollFX() {
 
     const r =
       sec.getBoundingClientRect();
+
 
     const denom =
       r.height - innerHeight;
@@ -185,7 +257,7 @@ function scrollFX() {
 }
 
 
-addEventListener(
+window.addEventListener(
   "scroll",
   scrollFX,
   {
@@ -194,61 +266,13 @@ addEventListener(
 );
 
 
-addEventListener(
+window.addEventListener(
   "resize",
   scrollFX
 );
 
 
 scrollFX();
-
-
-// =====================================================
-// CURRENT PAGE NAVIGATION
-// =====================================================
-
-const current =
-  location.pathname
-    .split("/")
-    .pop() ||
-  "index.html";
-
-
-// These pages belong to the "Cycles" section
-const cyclePages = [
-  "maternelle.html",
-  "primaire.html",
-  "preparatoire.html",
-  "secondaire.html"
-];
-
-
-$$(".nav-links a").forEach(a => {
-
-  const href =
-    a.getAttribute("href");
-
-
-  // Normal pages
-  if (href === current) {
-
-    a.classList.add("active");
-
-  }
-
-
-  // Keep "Cycles" active on the four
-  // individual cycle pages
-  if (
-    cyclePages.includes(current) &&
-    href === "cycles.html"
-  ) {
-
-    a.classList.add("active");
-
-  }
-
-});
 
 
 // =====================================================
@@ -262,13 +286,13 @@ let tx = cx;
 let ty = cy;
 
 
-const cursor = $("#cursor");
+const cursor =
+  $("#cursor");
 
 
 if (cursor) {
 
-  // Follow mouse
-  addEventListener(
+  window.addEventListener(
     "mousemove",
     e => {
 
@@ -279,7 +303,6 @@ if (cursor) {
   );
 
 
-  // Smooth cursor movement
   (function loop() {
 
     cx += (tx - cx) * .18;
@@ -288,6 +311,7 @@ if (cursor) {
 
     cursor.style.left =
       cx + "px";
+
 
     cursor.style.top =
       cy + "px";
@@ -298,7 +322,6 @@ if (cursor) {
   })();
 
 
-  // Cursor grows over clickable elements
   $$(
     "a, button, .cycle-card, .cycle-image, .news article"
   ).forEach(el => {
@@ -328,7 +351,7 @@ if (cursor) {
 
 
 // =====================================================
-// TIMELINE INTERACTIONS
+// TIMELINE
 // =====================================================
 
 const timelineButtons =
@@ -352,7 +375,6 @@ timelineButtons.forEach(button => {
   button.onclick = () => {
 
 
-    // Remove active state
     timelineButtons.forEach(x => {
 
       x.classList.remove("active");
@@ -360,11 +382,9 @@ timelineButtons.forEach(button => {
     });
 
 
-    // Activate clicked button
     button.classList.add("active");
 
 
-    // Fade out
     [
       year,
       yearTitle,
@@ -380,7 +400,6 @@ timelineButtons.forEach(button => {
     });
 
 
-    // Update content
     setTimeout(() => {
 
 
@@ -408,7 +427,6 @@ timelineButtons.forEach(button => {
       }
 
 
-      // Fade back in
       [
         year,
         yearTitle,
@@ -450,12 +468,8 @@ if (words.length) {
 
   setInterval(() => {
 
-
-    // Don't animate when tab isn't visible
     if (document.hidden) {
-
       return;
-
     }
 
 
@@ -473,7 +487,6 @@ if (words.length) {
     }
 
 
-    // Move to next word
     wi =
       (wi + 1) %
       words.length;
@@ -492,7 +505,6 @@ if (words.length) {
 
     }
 
-
   }, 2300);
 
 }
@@ -508,17 +520,12 @@ const cards =
 
 cards.forEach(card => {
 
-
   card.addEventListener(
     "mousemove",
     e => {
 
-
-      // Disable 3D effect on smaller screens
       if (innerWidth < 900) {
-
         return;
-
       }
 
 
