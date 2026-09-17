@@ -3,7 +3,7 @@ const loader=$("#loader");addEventListener("load",()=>setTimeout(()=>loader.clas
 const nav=$("#nav"),progress=$("#progress");
 function scrollFX(){
  const y=scrollY;nav.classList.toggle("scrolled",y>80);
- const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?y/max*100:0)+"%";
+ const max=document.documentElement.scrollHeight-innerHeight;if(progress)progress.style.width=(max>0?y/max*100:0)+"%";
  $$("[data-parallax]").forEach(el=>{const r=el.parentElement.getBoundingClientRect();const a=(innerHeight/2-(r.top+r.height/2))*.055;el.style.transform=`translate3d(0,${a}px,0) scale(1.05)`});
  const tr=$(".facility-track"), sec=$(".facilities");
  if(tr&&sec&&innerWidth>900){const r=sec.getBoundingClientRect();const p=Math.min(Math.max((innerHeight-r.top)/(r.height-innerHeight),0),1);const mx=tr.scrollWidth-innerWidth+innerWidth*.08;tr.style.transform=`translate3d(${-p*mx}px,0,0)`}

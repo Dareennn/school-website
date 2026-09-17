@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Notre-Dame de la Délivrande — Ghamra.">
-  <title>Notre-Dame de la Délivrande — Ghamra</title>
+  <title>Notre Histoire — Notre-Dame de la Délivrande</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home-page">
+<body class="inner-page">
   <div class="loader" id="loader">
     <div class="loader-inner">
       <div class="school-logo"><img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo"></div>
@@ -54,46 +54,23 @@
     </div>
   </div>
 
-<main id="accueil">
-<section class="hero">
-  <div class="hero-media" data-parallax><img src="images/notre_dame_school_courtyard.jpg" alt="Notre-Dame de la Délivrande School"><div class="hero-shade"></div></div>
-  <div class="hero-content">
-    <div class="eyebrow"><span></span> Éducation · Tradition · Avenir</div>
-    <h1><span class="line"><span>Grandir.</span></span><span class="line"><span>Apprendre.</span></span><span class="line accent-line"><span>Servir.</span></span></h1>
-    <div class="hero-bottom">
-      <p class="hero-copy">Une école francophone à Ghamra qui accompagne chaque élève avec exigence, bienveillance et confiance.</p>
-      <a class="circle-link" href="histoire.html"><span>DÉCOUVRIR<br>L'ÉCOLE</span><b>↗</b></a>
-    </div>
-  </div>
-  <div class="hero-meta"><span>Ghamra / 01</span><span>EXPLORER ↓</span></div>
-</section>
-
+<main class="inner-main">
+<section class="page-hero blue-page"><div><p class="kicker light">01 — Notre histoire</p><h1>Une école<br>ancrée dans <i>le temps.</i></h1><p>Depuis 1921, une histoire de transmission, de service et de rencontres à Ghamra.</p></div></section>
 <section class="intro section-light">
-  <div class="section-number">01 — NOTRE HISTOIRE</div>
   <div class="intro-grid">
-    <div class="intro-title"><p class="kicker">Une histoire qui continue</p><h2>Une école<br>ancrée dans<br><i>le temps.</i></h2></div>
-    <div class="intro-copy">
-      <p class="large-copy">Depuis 1921, Notre-Dame de la Délivrande accompagne les jeunes filles à Ghamra. Notre histoire est faite de transmission, de service, de rencontres et d'une vision tournée vers l'avenir.</p>
-      <p class="small-copy">Aujourd'hui, l'école accueille les élèves de la maternelle jusqu'au secondaire, avec le français comme première langue étrangère et une attention particulière portée à l'autonomie et à l'expression de l'enfant.</p>
-      <a class="text-link" href="histoire.html">Découvrir notre histoire <span>↗</span></a>
-    </div>
+    <div class="intro-title"><p class="kicker">Une histoire qui continue</p><h2>Grandir<br>ensemble,<br><i>depuis 1921.</i></h2></div>
+    <div class="intro-copy"><p class="large-copy">Notre-Dame de la Délivrande accompagne les jeunes filles à Ghamra depuis 1921.</p><p class="small-copy">L'école accueille aujourd'hui les élèves de la maternelle jusqu'au secondaire, avec une vision éducative tournée vers l'autonomie, l'expression et l'avenir.</p></div>
   </div>
 </section>
-
-<section class="values">
-  <div class="values-image"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85" alt="Élèves" data-parallax></div>
-  <div class="values-overlay"></div>
-  <div class="values-content"><p class="kicker light">Notre philosophie</p><div class="changing-word"><span class="word active">JOIE.</span><span class="word">BONHEUR.</span><span class="word">AUTONOMIE.</span><span class="word">SERVICE.</span></div><p>Former des jeunes capables de s'exprimer, de penser librement et de contribuer positivement au monde qui les entoure.</p></div>
-  <div class="statement-progress"><i class="active"></i><i></i><i></i><i></i></div>
-</section>
-
-<section class="home-links section-light">
-  <div class="section-number">02 — DÉCOUVRIR</div>
-  <div class="home-link-grid">
-    <a href="cycles.html"><span>01</span><h3>Les cycles</h3><b>↗</b></a>
-    <a href="vie.html"><span>02</span><h3>Vie de l'école</h3><b>↗</b></a>
-    <a href="actualites.html"><span>03</span><h3>Actualités</h3><b>↗</b></a>
-    <a href="admission.html"><span>04</span><h3>Admission</h3><b>↗</b></a>
+<section class="timeline" id="chronologie">
+  <div class="timeline-image"><img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1800&q=85" alt="Bâtiment scolaire historique" data-parallax></div>
+  <div class="timeline-overlay"></div>
+  <div class="timeline-content"><p class="kicker light">Notre parcours</p><div class="year" id="year">1921</div><h2 id="yearTitle">Les débuts à Ghamra.</h2><p id="yearText">Une histoire qui commence avec une école et un dispensaire, avant de devenir une communauté éducative profondément ancrée dans le quartier.</p></div>
+  <div class="timeline-dots">
+    <button class="active" data-year="1921" data-title="Les débuts à Ghamra." data-text="Une histoire qui commence avec une école et un dispensaire, avant de devenir une communauté éducative profondément ancrée dans le quartier."></button>
+    <button data-year="1949" data-title="Une école qui grandit." data-text="De nouveaux bâtiments accompagnent le développement des cycles et l'arrivée de nouvelles générations d'élèves."></button>
+    <button data-year="1956" data-title="Construire pour demain." data-text="Le campus évolue et devient un lieu de vie, d'apprentissage et de transmission."></button>
+    <button data-year="Aujourd'hui" data-title="Une communauté vivante." data-text="Plus de huit cents élèves et une communauté éducative qui continue à transmettre ses valeurs et à regarder vers l'avenir."></button>
   </div>
 </section>
 </main>
