@@ -3,66 +3,2197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Notre-Dame de la Délivrande — Al-Daher.">
+
+  <meta
+    name="description"
+    content="Admission — Notre-Dame de la Délivrande, Al-Daher."
+  >
+
   <title>Admission — Notre-Dame de la Délivrande</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="inner-page">
+
+<body class="inner-page admission-page">
+
+  <!-- =========================
+       LOADER
+  ========================== -->
+
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <div class="school-logo"><img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo"></div>
-      <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
+
+      <div class="school-logo">
+        <img
+          src="images/notre_dame_school_logo.jpg"
+          alt="Notre-Dame de la Délivrande logo"
+        >
+      </div>
+
+      <div class="school-name">
+        NOTRE-DAME DE LA DÉLIVRANDE
+      </div>
+
       <strong>Al-Daher</strong>
-      <div class="loader-line"><i></i></div>
-      <small>DEPUIS 1921 · LE CAIRE</small>
+
+      <div class="loader-line">
+        <i></i>
+      </div>
+
+      <small>
+        DEPUIS 1921 · LE CAIRE
+      </small>
+
     </div>
   </div>
 
+
+  <!-- =========================
+       GLOBAL UI
+  ========================== -->
+
   <div class="progress" id="progress"></div>
   <div class="grain"></div>
-  <div class="cursor" id="cursor"><span></span></div>
+
+  <div class="cursor" id="cursor">
+    <span></span>
+  </div>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
   <header class="nav" id="nav">
+
     <a class="brand" href="index.html">
       <span>NOTRE-DAME</span>
       <em>DE LA DÉLIVRANDE · Al-Daher</em>
     </a>
+
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="histoire.html">Histoire</a>
-      <a href="cycles.html">Cycles</a>
-      <a href="vie.html">Vie de l'école</a>
-      <a href="actualites.html">Actualités</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Accueil
+      </a>
+
+      <a href="histoire.html">
+        Histoire
+      </a>
+
+      <a href="cycles.html">
+        Cycles
+      </a>
+
+      <a href="vie.html">
+        Vie de l'école
+      </a>
+
+      <a href="actualites.html">
+        Actualités
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
+
     <div class="nav-right">
-      <a class="nav-admission" href="admission.html">Admission <span>↗</span></a>
+
+      <a class="nav-admission active" href="admission.html">
+        Admission
+        <span>↗</span>
+      </a>
+
     </div>
+
   </header>
 
-<main class="inner-main">
-<section class="admission">
-  <div class="admission-bg"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2200&q=85" alt="Campus"></div>
-  <div class="admission-overlay"></div>
-  <div class="admission-content"><p class="kicker light">05 — Admissions</p><h1>Prête à écrire<br>la <i>suite ?</i></h1><p>Découvrez les conditions d'admission et commencez votre démarche pour rejoindre Notre-Dame de la Délivrande.</p><div class="actions"><a href="#" class="big-link">Découvrir l'admission <span>↗</span></a><a href="contact.html" class="big-link">Nous contacter <span>↗</span></a></div></div>
-</section>
-</main>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="inner-main">
+
+
+    <!-- ==================================
+         ADMISSION HERO
+    =================================== -->
+
+    <section class="admission-hero">
+
+      <div class="admission-bg">
+
+        <img
+          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2200&q=85"
+          alt="Campus scolaire"
+        >
+
+      </div>
+
+      <div class="admission-overlay"></div>
+
+      <div class="admission-content">
+
+        <p class="kicker light">
+          05 — Admissions
+        </p>
+
+        <h1>
+          Votre enfant,
+          <br>
+          <i>notre avenir.</i>
+        </h1>
+
+        <p>
+          Découvrez les modalités d'inscription et
+          remplissez votre demande d'admission en ligne.
+        </p>
+
+        <button
+          class="admission-start-button"
+          id="startApplication"
+          type="button"
+        >
+          Commencer la demande
+          <span>↗</span>
+        </button>
+
+      </div>
+
+      <div class="admission-hero-meta">
+        <span>AL-DAHER / 05</span>
+        <span>ADMISSION ↓</span>
+      </div>
+
+    </section>
+
+
+    <!-- ==================================
+         APPLICATION INTRO
+    =================================== -->
+
+    <section class="application-intro section-light">
+
+      <div class="section-number">
+        01 — VOTRE DEMANDE
+      </div>
+
+      <div class="application-intro-grid">
+
+        <div>
+
+          <p class="kicker">
+            Inscription 2026 — 2027
+          </p>
+
+          <h2>
+            Commencez votre
+            <br>
+            <i>demande.</i>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="large-copy">
+            Avant de commencer, veuillez sélectionner
+            le niveau auquel vous souhaitez inscrire
+            votre enfant.
+          </p>
+
+          <p class="small-copy">
+            Les informations demandées varient selon
+            le niveau choisi. Veuillez préparer les
+            informations concernant l'enfant ainsi que
+            celles des deux parents.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================
+         APPLICATION AREA
+    =================================== -->
+
+    <section class="application-area" id="applicationArea">
+
+      <div class="application-container">
+
+
+        <!-- ===============================
+             PROGRESS
+        ================================ -->
+
+        <div class="application-progress">
+
+          <div class="application-progress-top">
+
+            <span>
+              DEMANDE D'ADMISSION
+            </span>
+
+            <span id="stepCounter">
+              Étape 1 / 6
+            </span>
+
+          </div>
+
+          <div class="progress-track">
+            <i id="formProgress"></i>
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 1
+        ================================ -->
+
+        <div
+          class="application-step active"
+          data-step="1"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 01
+            </p>
+
+            <h2>
+              Choisissez le
+              <i>niveau.</i>
+            </h2>
+
+            <p>
+              Sélectionnez le niveau correspondant
+              à l'âge et à la situation de votre enfant.
+            </p>
+
+          </div>
+
+
+          <div class="level-grid">
+
+
+            <!-- PRE-JARDIN -->
+
+            <button
+              type="button"
+              class="level-card"
+              data-level="prejardin"
+            >
+
+              <span class="level-number">
+                01
+              </span>
+
+              <div>
+
+                <small>
+                  INSCRIPTION
+                </small>
+
+                <h3>
+                  Pré-jardin
+                </h3>
+
+                <p>
+                  L'enfant doit avoir
+                  <strong>3 ans au 01/10/2026</strong>.
+                </p>
+
+              </div>
+
+              <b>↗</b>
+
+            </button>
+
+
+            <!-- JARDIN -->
+
+            <button
+              type="button"
+              class="level-card"
+              data-level="jardin"
+            >
+
+              <span class="level-number">
+                02
+              </span>
+
+              <div>
+
+                <small>
+                  INSCRIPTION
+                </small>
+
+                <h3>
+                  Jardin d'enfant
+                </h3>
+
+                <p>
+                  L'enfant doit avoir
+                  <strong>4 ans au 01/10/2026</strong>.
+                </p>
+
+              </div>
+
+              <b>↗</b>
+
+            </button>
+
+
+            <!-- PRIMARY -->
+
+            <button
+              type="button"
+              class="level-card"
+              data-level="primaire"
+            >
+
+              <span class="level-number">
+                03
+              </span>
+
+              <div>
+
+                <small>
+                  TRANSFERT
+                </small>
+
+                <h3>
+                  Primaire & préparatoire
+                </h3>
+
+                <p>
+                  Admission selon les conditions
+                  de transfert de l'école.
+                </p>
+
+              </div>
+
+              <b>↗</b>
+
+            </button>
+
+          </div>
+
+
+          <div
+            class="selected-level"
+            id="selectedLevel"
+          ></div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 2
+        ================================ -->
+
+        <div
+          class="application-step"
+          data-step="2"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 02
+            </p>
+
+            <h2>
+              Données de
+              <i>l'enfant.</i>
+            </h2>
+
+            <p>
+              Veuillez remplir les informations
+              exactement comme elles figurent
+              sur le certificat de naissance.
+            </p>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              <span>01</span>
+              <h3>Identité</h3>
+            </div>
+
+
+            <div class="form-grid">
+
+
+              <div class="field full">
+
+                <label>
+                  Le nom complet
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="child_full_name"
+                  placeholder="Nom complet identique au certificat de naissance"
+                  required
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Religion
+                  <sup>*</sup>
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_religion"
+                      value="Chrétienne"
+                    >
+                    <span>Chrétienne</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_religion"
+                      value="Musulmane"
+                    >
+                    <span>Musulmane</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nationalité
+                </label>
+
+                <select name="child_nationality">
+
+                  <option value="">
+                    Sélectionner
+                  </option>
+
+                  <option value="Egyptienne">
+                    Egyptienne
+                  </option>
+
+                  <option value="Autre">
+                    Autre
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Lieu de naissance
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="child_birth_place"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Date de naissance
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="date"
+                  name="child_birth_date"
+                >
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  Numéro national du certificat de naissance
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="child_birth_certificate"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DAYCARE ONLY -->
+
+          <div
+            class="form-section kindergarten-fields"
+            id="kindergartenFields"
+          >
+
+            <div class="form-section-title">
+
+              <span>02</span>
+
+              <h3>
+                Garderie
+              </h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field full">
+
+                <label>
+                  L'enfant a-t-elle été inscrite
+                  dans une garderie ?
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_daycare"
+                      value="Oui"
+                    >
+                    <span>Oui</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_daycare"
+                      value="Non"
+                    >
+                    <span>Non</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  Nom de la garderie
+                </label>
+
+                <input
+                  type="text"
+                  name="daycare_name"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRIMARY ONLY -->
+
+          <div
+            class="form-section primary-fields"
+            id="primaryFields"
+          >
+
+            <div class="form-section-title">
+
+              <span>02</span>
+
+              <h3>
+                Scolarité actuelle
+              </h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field full">
+
+                <label>
+                  École où l'élève est actuellement inscrite
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="current_school"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  En quelle classe ?
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="current_grade"
+                  placeholder="Année 2025 — 2026"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Raisons du transfert
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="transfer_reason"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ADDRESS -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>03</span>
+
+              <h3>
+                Coordonnées
+              </h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field full">
+
+                <label>
+                  L'adresse de la maison
+                  <sup>*</sup>
+                </label>
+
+                <textarea
+                  name="home_address"
+                  rows="3"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Téléphone domicile
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="tel"
+                  name="home_phone"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SIBLINGS -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>04</span>
+
+              <h3>
+                Frères et sœurs
+              </h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label>
+                  Nombre de sœurs
+                </label>
+
+                <input
+                  type="number"
+                  min="0"
+                  name="sisters_count"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nom de l'école
+                </label>
+
+                <input
+                  type="text"
+                  name="sisters_school"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nombre de frères
+                </label>
+
+                <input
+                  type="number"
+                  min="0"
+                  name="brothers_count"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nom de l'école
+                </label>
+
+                <input
+                  type="text"
+                  name="brothers_school"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="form-button secondary"
+              data-prev
+            >
+              ← Retour
+            </button>
+
+            <button
+              type="button"
+              class="form-button"
+              data-next
+            >
+              Continuer
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 3 — FATHER
+        ================================ -->
+
+        <div
+          class="application-step"
+          data-step="3"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 03
+            </p>
+
+            <h2>
+              Données du
+              <i>père.</i>
+            </h2>
+
+            <p>
+              Informations personnelles,
+              académiques et professionnelles.
+            </p>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>01</span>
+              <h3>Informations personnelles</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field full">
+
+                <label>
+                  Le nom
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="father_name"
+                  placeholder="Nom identique au certificat de naissance"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Religion
+                  <sup>*</sup>
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_religion"
+                      value="Chrétien"
+                    >
+                    <span>Chrétien</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_religion"
+                      value="Musulman"
+                    >
+                    <span>Musulman</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nationalité
+                </label>
+
+                <select name="father_nationality">
+
+                  <option value="">
+                    Sélectionner
+                  </option>
+
+                  <option value="Egyptien">
+                    Egyptien
+                  </option>
+
+                  <option value="Autre">
+                    Autre
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>02</span>
+              <h3>Formation</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label>
+                  École secondaire
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="father_high_school">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Diplômes universitaires
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="father_degrees">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Université
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="father_university">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Autre formation
+                </label>
+
+                <input type="text" name="father_other_training">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>03</span>
+              <h3>Profession</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label>
+                  Le travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="father_job">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Lieu de travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="father_workplace">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Téléphone du travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="tel" name="father_work_phone">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Portable
+                  <sup>*</sup>
+                </label>
+
+                <input type="tel" name="father_mobile">
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  Secteur
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_sector"
+                      value="public"
+                    >
+                    <span>Public</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_sector"
+                      value="privé"
+                    >
+                    <span>Privé</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  E-mail
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="email"
+                  name="father_email"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="form-button secondary"
+              data-prev
+            >
+              ← Retour
+            </button>
+
+            <button
+              type="button"
+              class="form-button"
+              data-next
+            >
+              Continuer
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 4 — MOTHER
+        ================================ -->
+
+        <div
+          class="application-step"
+          data-step="4"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 04
+            </p>
+
+            <h2>
+              Données de la
+              <i>mère.</i>
+            </h2>
+
+            <p>
+              Informations personnelles,
+              académiques et professionnelles.
+            </p>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>01</span>
+              <h3>Informations personnelles</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field full">
+
+                <label>
+                  Le nom
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="text"
+                  name="mother_name"
+                  placeholder="Nom identique au certificat de naissance"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Religion
+                  <sup>*</sup>
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_religion"
+                      value="Chrétienne"
+                    >
+                    <span>Chrétienne</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_religion"
+                      value="Musulmane"
+                    >
+                    <span>Musulmane</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Nationalité
+                </label>
+
+                <select name="mother_nationality">
+
+                  <option value="">
+                    Sélectionner
+                  </option>
+
+                  <option value="Egyptienne">
+                    Egyptienne
+                  </option>
+
+                  <option value="Autre">
+                    Autre
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>02</span>
+              <h3>Formation</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label>
+                  École secondaire
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="mother_high_school">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Diplômes universitaires
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="mother_degrees">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Université
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="mother_university">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Autre formation
+                </label>
+
+                <input type="text" name="mother_other_training">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>03</span>
+              <h3>Profession</h3>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label>
+                  Le travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="mother_job">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Lieu de travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="text" name="mother_workplace">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Téléphone du travail
+                  <sup>*</sup>
+                </label>
+
+                <input type="tel" name="mother_work_phone">
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Portable
+                  <sup>*</sup>
+                </label>
+
+                <input type="tel" name="mother_mobile">
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  Secteur
+                </label>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_sector"
+                      value="public"
+                    >
+                    <span>Public</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_sector"
+                      value="privé"
+                    >
+                    <span>Privé</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  E-mail
+                  <sup>*</sup>
+                </label>
+
+                <input
+                  type="email"
+                  name="mother_email"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="form-button secondary"
+              data-prev
+            >
+              ← Retour
+            </button>
+
+            <button
+              type="button"
+              class="form-button"
+              data-next
+            >
+              Continuer
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 5 — FAMILY
+        ================================ -->
+
+        <div
+          class="application-step"
+          data-step="5"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 05
+            </p>
+
+            <h2>
+              Situation de
+              <i>famille.</i>
+            </h2>
+
+            <p>
+              Ces informations permettent à l'école
+              de connaître la situation familiale
+              de l'enfant.
+            </p>
+
+          </div>
+
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+
+              <span>01</span>
+
+              <h3>
+                Situation familiale
+              </h3>
+
+            </div>
+
+
+            <div class="family-options">
+
+
+              <div class="family-question">
+
+                <h4>
+                  Mariage valide :
+                  <sup>*</sup>
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="marriage_status"
+                      value="Valide"
+                    >
+                    <span>Valide</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="marriage_status"
+                      value="Divorce"
+                    >
+                    <span>Divorce</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="marriage_status"
+                      value="Séparation"
+                    >
+                    <span>Séparation</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="family-question">
+
+                <h4>
+                  2ème mariage du père
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_second_marriage"
+                      value="Non"
+                    >
+                    <span>Non</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_second_marriage"
+                      value="Oui"
+                    >
+                    <span>Oui</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="family-question">
+
+                <h4>
+                  2ème mariage de la mère
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_second_marriage"
+                      value="Non"
+                    >
+                    <span>Non</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_second_marriage"
+                      value="Oui"
+                    >
+                    <span>Oui</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="family-question">
+
+                <h4>
+                  Décès du père
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_death"
+                      value="Non"
+                    >
+                    <span>Non</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="father_death"
+                      value="Oui"
+                    >
+                    <span>Oui</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="family-question">
+
+                <h4>
+                  Décès de la mère
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_death"
+                      value="Non"
+                    >
+                    <span>Non</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="mother_death"
+                      value="Oui"
+                    >
+                    <span>Oui</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="family-question">
+
+                <h4>
+                  Dans ces cas la garde de l'enfant est
+                </h4>
+
+                <div class="radio-group">
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_custody"
+                      value="au père"
+                    >
+                    <span>Au père</span>
+                  </label>
+
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="child_custody"
+                      value="à la mère"
+                    >
+                    <span>À la mère</span>
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="form-button secondary"
+              data-prev
+            >
+              ← Retour
+            </button>
+
+            <button
+              type="button"
+              class="form-button"
+              data-next
+            >
+              Continuer
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             STEP 6 — IMPORTANT
+        ================================ -->
+
+        <div
+          class="application-step"
+          data-step="6"
+        >
+
+          <div class="form-heading">
+
+            <p class="kicker">
+              Étape 06
+            </p>
+
+            <h2>
+              Informations
+              <i>importantes.</i>
+            </h2>
+
+            <p>
+              Veuillez lire attentivement les
+              informations suivantes avant de soumettre
+              votre demande.
+            </p>
+
+          </div>
+
+
+          <!-- IMPORTANT -->
+
+          <div class="notice-box">
+
+            <div class="notice-icon">
+              !
+            </div>
+
+            <div>
+
+              <h3>
+                Important
+              </h3>
+
+              <ul>
+
+                <li>
+                  Remplir la demande sur le site web
+                  ne signifie pas qu'elle a été acceptée.
+                </li>
+
+                <li>
+                  Si la demande est acceptée,
+                  nous vous contacterons pour planifier
+                  une entrevue qui pourrait aller
+                  jusqu'au mois de Juin.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <!-- DOCUMENTS -->
+
+          <div class="documents-box">
+
+            <div class="form-section-title">
+
+              <span>01</span>
+
+              <h3>
+                Documents à présenter à l'entrevue
+              </h3>
+
+            </div>
+
+
+            <ol>
+
+              <li>
+                Le certificat de naissance original
+                + photocopie.
+              </li>
+
+              <li>
+                4 photos récentes de l'enfant.
+              </li>
+
+              <li>
+                Des photocopies des certificats
+                de fin d'études universitaires
+                des 2 parents.
+              </li>
+
+              <li>
+                Un certificat approuvé par l'école
+                française dont l'un des parents est diplômé.
+              </li>
+
+              <li>
+                Une photocopie de la carte d'identité
+                pour chacun des parents.
+              </li>
+
+            </ol>
+
+          </div>
+
+
+          <!-- RULES -->
+
+          <div class="documents-box">
+
+            <div class="form-section-title">
+
+              <span>02</span>
+
+              <h3>
+                N.B.
+              </h3>
+
+            </div>
+
+
+            <ul class="rules-list">
+
+              <li>
+                Tous ces documents seront présentés
+                dans une chemise en plastique.
+                Le dossier incomplet ne sera pas accepté.
+              </li>
+
+              <li>
+                Il est nécessaire que l'un des parents
+                maîtrise la langue française.
+              </li>
+
+              <li>
+                L'entretien ne peut être tenu qu'en
+                présence du père, de la mère et de l'enfant.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- PRIMARY CONDITIONS -->
+
+          <div
+            class="documents-box primary-admission-rules"
+            id="primaryRules"
+          >
+
+            <div class="form-section-title">
+
+              <span>03</span>
+
+              <h3>
+                Règles d'admission — Primaire & préparatoire
+              </h3>
+
+            </div>
+
+
+            <ul class="rules-list">
+
+              <li>
+                L'école admet les élèves aux cycles
+                primaire et préparatoire seulement.
+                L'école n'admet pas d'élève au cycle secondaire.
+              </li>
+
+              <li>
+                Le transfert doit être effectué à partir
+                d'un établissement francophone religieux.
+              </li>
+
+              <li>
+                L'âge de l'élève doit être adéquat
+                à l'année scolaire où elle doit être inscrite.
+              </li>
+
+              <li>
+                L'élève doit avoir un bulletin scolaire satisfaisant.
+              </li>
+
+              <li>
+                L'élève devra passer un test d'admission
+                en français. Un test d'anglais s'ajoutera
+                à partir de la 3ème primaire, au cas où
+                son application sur le site web aura été acceptée.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="email-notice">
+
+            <span>✉</span>
+
+            <div>
+
+              <strong>
+                Pour les demandes Primaire & préparatoire
+              </strong>
+
+              <p>
+                Veuillez nous envoyer une photocopie du
+                bulletin scolaire de l'élève de l'année
+                actuelle par e-mail :
+              </p>
+
+              <a href="mailto:ndd@delivrande-heliopolis.com">
+                ndd@delivrande-heliopolis.com
+              </a>
+
+              <p>
+                Veuillez copier et coller le numéro national
+                du certificat de naissance dans le champ
+                <strong>Objet</strong> de votre e-mail.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- SPECIAL PRE-JARDIN -->
+
+          <div
+            class="special-note"
+            id="prejardinNote"
+          >
+
+            <strong>
+              À noter — Pré-jardin
+            </strong>
+
+            <p>
+              L'école acceptera les garçons uniquement
+              pour la classe de pré-jardin.
+              Les garçons ne continueront pas à l'école
+              par la suite.
+            </p>
+
+          </div>
+
+
+          <!-- AGREEMENT -->
+
+          <label class="agreement">
+
+            <input
+              type="checkbox"
+              id="agreement"
+            >
+
+            <span class="agreement-check"></span>
+
+            <p>
+              Je confirme avoir lu et compris les
+              informations et conditions d'admission
+              mentionnées ci-dessus.
+            </p>
+
+          </label>
+
+
+          <div class="final-note">
+
+            <p>
+              <strong>Remarque :</strong>
+              Ce dossier n'oblige pas l'école à accepter
+              l'enfant.
+            </p>
+
+          </div>
+
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="form-button secondary"
+              data-prev
+            >
+              ← Retour
+            </button>
+
+            <button
+              type="button"
+              class="form-button submit-button"
+              id="submitApplication"
+            >
+              Envoyer la demande
+              <span>↗</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================
+             SUCCESS
+        ================================ -->
+
+        <div
+          class="application-success"
+          id="applicationSuccess"
+        >
+
+          <div class="success-circle">
+            ✓
+          </div>
+
+          <p class="kicker">
+            Demande reçue
+          </p>
+
+          <h2>
+            Merci pour
+            <br>
+            <i>votre demande.</i>
+          </h2>
+
+          <p>
+            Votre demande d'admission a été enregistrée.
+            L'inscription en ligne ne signifie pas
+            l'acceptation de l'enfant.
+          </p>
+
+          <p>
+            Si la demande est acceptée, l'école vous
+            contactera pour la suite de la procédure.
+          </p>
+
+          <a
+            href="index.html"
+            class="form-button"
+          >
+            Retour à l'accueil
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
+
     <div class="footer-top">
-      <div class="footer-brand"><span>NOTRE-DAME</span><em>DE LA DÉLIVRANDE · Al-Daher</em></div>
-      <div class="footer-tag">Joie.<br>Bonheur.<br>Servir.</div>
-      <div class="footer-address">Daher, 5 Habib Shalaby, Berket AZ Zatli, Bab El Sharia, Gouvernorat du Caire<br>(02) 2415 5192</div>
+
+      <div class="footer-brand">
+
+        <span>
+          NOTRE-DAME
+        </span>
+
+        <em>
+          DE LA DÉLIVRANDE · Al-Daher
+        </em>
+
+      </div>
+
+      <div class="footer-tag">
+        Joie.<br>
+        Bonheur.<br>
+        Servir.
+      </div>
+
+      <div class="footer-address">
+
+        Daher, 5 Habib Shalaby,
+        Berket AZ Zatli,
+        Bab El Sharia,
+        Gouvernorat du Caire
+
+        <br>
+
+        (02) 2415 5192
+
+      </div>
+
     </div>
+
+
     <div class="footer-bottom">
-      <span>© 2026 Notre-Dame de la Délivrande</span>
-      <div><a href="#">Facebook</a><a href="#">YouTube</a><a href="vie.html">Galerie</a></div>
-      <span>Prototype</span>
+
+      <span>
+        © 2026 Notre-Dame de la Délivrande
+      </span>
+
+      <div>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          YouTube
+        </a>
+
+        <a href="vie.html">
+          Galerie
+        </a>
+
+      </div>
+
+      <span>
+        Admission
+      </span>
+
     </div>
+
   </footer>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
