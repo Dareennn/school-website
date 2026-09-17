@@ -1,3 +1,4 @@
+
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -19,49 +20,29 @@ async function loadComponent(containerId, file) {
     }
 
     const html = await response.text();
+
     container.innerHTML = html;
 
-    // Hide loader immediately after it is inserted
+    // Hide loader after it has been inserted
     if (containerId === "loader-container") {
       const loader = container.querySelector("#loader");
 
       if (loader) {
-        loader.classList.add("hide");
+        setTimeout(() => {
+          loader.classList.add("hide");
+        }, 1000);
       }
     }
 
+    // Initialize navigation after header loads
     if (containerId === "header-container") {
       initializeNavigation();
       scrollFX();
     }
 
   } catch (error) {
-    console.error(`Error loading component ${file}:`, error);
+    console.error(`Error loading ${file}:`, error);
   }
-}
-
-// =================================================
-// INITIALIZE NAVIGATION AFTER HEADER LOAD
-// =================================================
-
-if (containerId === "header-container") {
-
-  initializeNavigation();
-
-  // Update header state immediately
-  scrollFX();
-
-}
-
-  } catch (error) {
-
-  console.error(
-    `Error loading ${file}:`,
-    error
-  );
-
-}
-
 }
 
 
@@ -95,13 +76,11 @@ function initializeNavigation() {
 
   if (!nav) return;
 
-
   const current =
     location.pathname
       .split("/")
       .pop() ||
     "index.html";
-
 
   const cyclePages = [
     "maternelle.html",
@@ -110,29 +89,22 @@ function initializeNavigation() {
     "secondaire.html"
   ];
 
-
   $$(".nav-links a").forEach(a => {
 
     const href =
       a.getAttribute("href");
 
-
     // Normal page
     if (href === current) {
-
       a.classList.add("active");
-
     }
-
 
     // Keep Cycles active on individual cycle pages
     if (
       cyclePages.includes(current) &&
       href === "cycles.html"
     ) {
-
       a.classList.add("active");
-
     }
 
   });
@@ -151,7 +123,6 @@ function scrollFX() {
 
   const y = scrollY;
 
-
   // Header
   const nav = $("#nav");
 
@@ -164,14 +135,12 @@ function scrollFX() {
 
   }
 
-
   // Progress bar
   if (progress) {
 
     const max =
       document.documentElement.scrollHeight -
       innerHeight;
-
 
     progress.style.width =
       (
@@ -182,20 +151,17 @@ function scrollFX() {
 
   }
 
-
   // Parallax
   $$("[data-parallax]").forEach(el => {
 
     const r =
       el.parentElement.getBoundingClientRect();
 
-
     const a =
       (
         innerHeight / 2 -
         (r.top + r.height / 2)
       ) * .035;
-
 
     el.style.transform =
       `translate3d(0,${a}px,0) scale(1.04)`;
@@ -213,7 +179,6 @@ function scrollFX() {
   const sec =
     $(".facilities");
 
-
   if (
     tr &&
     sec &&
@@ -223,10 +188,8 @@ function scrollFX() {
     const r =
       sec.getBoundingClientRect();
 
-
     const denom =
       r.height - innerHeight;
-
 
     const p =
       denom > 0
@@ -239,7 +202,6 @@ function scrollFX() {
         )
         : 0;
 
-
     const mx =
       Math.max(
         tr.scrollWidth -
@@ -247,7 +209,6 @@ function scrollFX() {
         innerWidth * .08,
         0
       );
-
 
     tr.style.transform =
       `translate3d(${-p * mx}px,0,0)`;
@@ -308,14 +269,11 @@ if (cursor) {
     cx += (tx - cx) * .18;
     cy += (ty - cy) * .18;
 
-
     cursor.style.left =
       cx + "px";
 
-
     cursor.style.top =
       cy + "px";
-
 
     requestAnimationFrame(loop);
 
@@ -391,9 +349,7 @@ timelineButtons.forEach(button => {
     ].forEach(x => {
 
       if (x) {
-
         x.style.opacity = 0;
-
       }
 
     });
@@ -553,3 +509,5 @@ cards.forEach(card => {
   );
 
 });
+
+
