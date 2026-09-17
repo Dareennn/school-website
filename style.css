@@ -550,7 +550,7 @@ button {
 .kicker {
   margin: 0 0 22px;
   color: var(--red);
-  font: 11px var(--mono);
+  font: 20px var(--mono);
   letter-spacing: .12em;
   text-transform: uppercase
 }
@@ -1544,7 +1544,7 @@ footer {
 }
 
 .cycles {
-  padding: 135px 6vw 145px
+  padding: 90px 6vw 145px
 }
 
 .cycles-head,
@@ -1743,7 +1743,7 @@ footer {
 
 .page-hero {
   min-height: 52vh !important;
-  height: 58vh !important;
+  height: auto !important;
   padding: 125px 7vw 70px !important
 }
 
