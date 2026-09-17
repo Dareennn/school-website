@@ -24,17 +24,12 @@ async function loadComponent(containerId, file) {
 
     container.innerHTML = await response.text();
 
-
     if (containerId === "loader-container") {
 
       const loader = document.getElementById("loader");
 
       if (loader) {
-
-        setTimeout(() => {
-          loader.classList.add("hide");
-        }, 1000);
-
+        loader.classList.add("hide");
       }
 
     }
