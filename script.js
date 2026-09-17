@@ -7,59 +7,60 @@ const $$ = s => [...document.querySelectorAll(s)];
 // =====================================================
 
 async function loadComponent(containerId, file) {
-
   const container = document.getElementById(containerId);
 
   if (!container) return;
 
   try {
-
-    const response = await fetch(file);
+    const response = await fetch(file + "?v=" + Date.now());
 
     if (!response.ok) {
-      throw new Error(
-        `Could not load ${file}: ${response.status}`
-      );
+      throw new Error(`Could not load ${file}: ${response.status}`);
     }
 
-    container.innerHTML = await response.text();
+    const html = await response.text();
+    container.innerHTML = html;
 
+    // Hide loader immediately after it is inserted
     if (containerId === "loader-container") {
-      const loader = document.getElementById("loader");
+      const loader = container.querySelector("#loader");
 
       if (loader) {
-        console.log("LOADER FOUND");
-
-        setTimeout(() => {
-          loader.classList.add("hide");
-          console.log("LOADER HIDDEN");
-        }, 1000);
-      } else {
-        console.log("LOADER NOT FOUND");
+        loader.classList.add("hide");
       }
     }
 
-    // =================================================
-    // INITIALIZE NAVIGATION AFTER HEADER LOAD
-    // =================================================
-
     if (containerId === "header-container") {
-
       initializeNavigation();
-
-      // Update header state immediately
       scrollFX();
-
     }
 
   } catch (error) {
-
-    console.error(
-      `Error loading ${file}:`,
-      error
-    );
-
+    console.error(`Error loading component ${file}:`, error);
   }
+}
+
+// =================================================
+// INITIALIZE NAVIGATION AFTER HEADER LOAD
+// =================================================
+
+if (containerId === "header-container") {
+
+  initializeNavigation();
+
+  // Update header state immediately
+  scrollFX();
+
+}
+
+  } catch (error) {
+
+  console.error(
+    `Error loading ${file}:`,
+    error
+  );
+
+}
 
 }
 
