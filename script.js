@@ -1,130 +1,178 @@
 
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
+
+const $ = (selector) => document.querySelector(selector);
+
+const $$ = (selector) => [
+  ...document.querySelectorAll(selector)
+];
 
 
-// =====================================================
-// LOAD SHARED COMPONENTS
-// =====================================================
 
-async function loadComponent(containerId, file) {
-  const container = document.getElementById(containerId);
 
-  if (!container) return;
+const headerContainer = $("#header-container");
+const footerContainer = $("#footer-container");
+const loaderContainer = $("#loader-container");
 
-  try {
-    const response = await fetch(file + "?v=" + Date.now());
 
-    if (!response.ok) {
-      throw new Error(`Could not load ${file}: ${response.status}`);
-    }
+if (headerContainer) {
 
-    const html = await response.text();
+  headerContainer.innerHTML = `
+    <header class="nav" id="nav">
 
-    container.innerHTML = html;
+      <a class="brand" href="index.html">
 
-    // Hide loader after it has been inserted
-    if (containerId === "loader-container") {
-      const loader = container.querySelector("#loader");
+        <span>NOTRE-DAME</span>
 
-      if (loader) {
-        setTimeout(() => {
-          loader.classList.add("hide");
-        }, 1000);
-      }
-    }
+        <em>DE LA DÉLIVRANDE · Al-Daher</em>
 
-    // Initialize navigation after header loads
-    if (containerId === "header-container") {
-      initializeNavigation();
-      scrollFX();
-    }
+      </a>
 
-  } catch (error) {
-    console.error(`Error loading ${file}:`, error);
-  }
+
+      <nav class="nav-links" aria-label="Navigation principale">
+
+        <a href="index.html">Accueil</a>
+
+        <a href="histoire.html">Histoire</a>
+
+        <a href="cycles.html">Cycles</a>
+
+        <a href="vie.html">Vie de l'école</a>
+
+        <a href="actualites.html">Actualités</a>
+
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+
+      <div class="nav-right">
+
+        <a class="nav-admission" href="admission.html">
+          Admission
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </header>
+  `;
+
 }
 
 
-// =====================================================
-// LOAD HEADER / FOOTER / LOADER
-// =====================================================
+if (footerContainer) {
 
-loadComponent(
-  "loader-container",
-  "components/loader.html"
-);
+  footerContainer.innerHTML = `
+    <footer>
 
-loadComponent(
-  "header-container",
-  "components/header.html"
-);
+      <div class="footer-top">
 
-loadComponent(
-  "footer-container",
-  "components/footer.html"
-);
+        <div class="footer-brand">
+          <span>NOTRE-DAME</span>
+          <em>DE LA DÉLIVRANDE · Al-Daher</em>
+        </div>
+
+        <div class="footer-tag">
+          Joie.<br>
+          Bonheur.<br>
+          Servir.
+        </div>
+
+        <div class="footer-address">
+          Daher, 5 Habib Shalaby,
+          Berket AZ Zatli,
+          Bab El Sharia,
+          Gouvernorat du Caire
+          <br>
+          (02) 2415 5192
+        </div>
+
+      </div>
 
 
-// =====================================================
-// NAVIGATION
-// =====================================================
+      <div class="footer-bottom">
 
-function initializeNavigation() {
+        <span>© 2026 Notre-Dame de la Délivrande</span>
 
-  const nav = $("#nav");
+        <div>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+          <a href="vie.html">Galerie</a>
+        </div>
 
-  if (!nav) return;
+        <span>Prototype</span>
 
-  const current =
-    location.pathname
-      .split("/")
-      .pop() ||
-    "index.html";
+      </div>
 
-  const cyclePages = [
-    "maternelle.html",
-    "primaire.html",
-    "preparatoire.html",
-    "secondaire.html"
-  ];
+    </footer>
+  `;
 
-  $$(".nav-links a").forEach(a => {
+}
 
-    const href =
-      a.getAttribute("href");
 
-    // Normal page
-    if (href === current) {
-      a.classList.add("active");
-    }
+if (loaderContainer) {
 
-    // Keep Cycles active on individual cycle pages
-    if (
-      cyclePages.includes(current) &&
-      href === "cycles.html"
-    ) {
-      a.classList.add("active");
-    }
+  loaderContainer.innerHTML = `
+    <div class="loader" id="loader">
+
+      <div class="loader-inner">
+
+        <div class="school-logo">
+          <img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo">
+        </div>
+
+        <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
+
+        <strong>Al-Daher</strong>
+
+        <div class="loader-line"><i></i></div>
+
+        <small>DEPUIS 1921 · LE CAIRE</small>
+
+      </div>
+
+    </div>
+  `;
+
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+const loader = $("#loader");
+
+if (loader) {
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+      loader.classList.add("hide");
+
+    }, 1000);
 
   });
 
 }
 
 
-// =====================================================
-// NAVIGATION + SCROLL EFFECTS
-// =====================================================
+/* =========================================================
+   NAVIGATION + SCROLL
+========================================================= */
+
+const nav = $("#nav");
 
 const progress = $("#progress");
 
 
 function scrollFX() {
 
-  const y = scrollY;
+  const y = window.scrollY;
 
-  // Header
-  const nav = $("#nav");
+
+  /* Navbar */
 
   if (nav) {
 
@@ -135,32 +183,41 @@ function scrollFX() {
 
   }
 
-  // Progress bar
+
+  /* Reading progress */
+
   if (progress) {
 
     const max =
-      document.documentElement.scrollHeight -
-      innerHeight;
+      document.documentElement.scrollHeight
+      - window.innerHeight;
 
     progress.style.width =
       (
         max > 0
-          ? y / max * 100
+          ? (y / max) * 100
           : 0
       ) + "%";
 
   }
 
-  // Parallax
-  $$("[data-parallax]").forEach(el => {
+
+  /* Parallax */
+
+  $$("[data-parallax]").forEach((el) => {
 
     const r =
       el.parentElement.getBoundingClientRect();
 
     const a =
       (
-        innerHeight / 2 -
-        (r.top + r.height / 2)
+        window.innerHeight / 2
+        -
+        (
+          r.top
+          +
+          r.height / 2
+        )
       ) * .035;
 
     el.style.transform =
@@ -169,49 +226,53 @@ function scrollFX() {
   });
 
 
-  // ===================================================
-  // FACILITIES HORIZONTAL SCROLL
-  // ===================================================
+  /* Horizontal facilities */
 
-  const tr =
+  const track =
     $(".facility-track");
 
-  const sec =
+  const section =
     $(".facilities");
 
+
   if (
-    tr &&
-    sec &&
-    innerWidth > 900
+    track &&
+    section &&
+    window.innerWidth > 900
   ) {
 
     const r =
-      sec.getBoundingClientRect();
+      section.getBoundingClientRect();
 
-    const denom =
-      r.height - innerHeight;
+    const denominator =
+      r.height - window.innerHeight;
 
     const p =
-      denom > 0
+      denominator > 0
         ? Math.min(
           Math.max(
-            (innerHeight - r.top) / denom,
+            (
+              window.innerHeight
+              - r.top
+            ) / denominator,
             0
           ),
           1
         )
         : 0;
 
-    const mx =
+    const maxX =
       Math.max(
-        tr.scrollWidth -
-        innerWidth +
-        innerWidth * .08,
+        track.scrollWidth
+        -
+        window.innerWidth
+        +
+        window.innerWidth * .08,
         0
       );
 
-    tr.style.transform =
-      `translate3d(${-p * mx}px,0,0)`;
+    track.style.transform =
+      `translate3d(${-p * maxX}px,0,0)`;
 
   }
 
@@ -221,50 +282,68 @@ function scrollFX() {
 window.addEventListener(
   "scroll",
   scrollFX,
-  {
-    passive: true
-  }
+  { passive: true }
 );
-
 
 window.addEventListener(
   "resize",
   scrollFX
 );
 
-
 scrollFX();
 
 
-// =====================================================
-// CUSTOM CURSOR
-// =====================================================
+/* =========================================================
+   CURRENT NAVIGATION
+========================================================= */
 
-let cx = innerWidth / 2;
-let cy = innerHeight / 2;
+const current =
+  location.pathname.split("/").pop()
+  ||
+  "index.html";
+
+
+$$(".nav-links a").forEach((link) => {
+
+  const href =
+    link.getAttribute("href");
+
+  if (href === current) {
+
+    link.classList.add("active");
+
+  }
+
+});
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+let cx = window.innerWidth / 2;
+let cy = window.innerHeight / 2;
 
 let tx = cx;
 let ty = cy;
 
-
-const cursor =
-  $("#cursor");
+const cursor = $("#cursor");
 
 
 if (cursor) {
 
   window.addEventListener(
     "mousemove",
-    e => {
+    (event) => {
 
-      tx = e.clientX;
-      ty = e.clientY;
+      tx = event.clientX;
+      ty = event.clientY;
 
     }
   );
 
 
-  (function loop() {
+  (function cursorLoop() {
 
     cx += (tx - cx) * .18;
     cy += (ty - cy) * .18;
@@ -275,16 +354,18 @@ if (cursor) {
     cursor.style.top =
       cy + "px";
 
-    requestAnimationFrame(loop);
+    requestAnimationFrame(
+      cursorLoop
+    );
 
   })();
 
 
   $$(
-    "a, button, .cycle-card, .cycle-image, .news article"
-  ).forEach(el => {
+    "a, button, .cycle-card, .news article, .cycle-option"
+  ).forEach((element) => {
 
-    el.addEventListener(
+    element.addEventListener(
       "mouseenter",
       () => {
 
@@ -294,7 +375,7 @@ if (cursor) {
     );
 
 
-    el.addEventListener(
+    element.addEventListener(
       "mouseleave",
       () => {
 
@@ -308,99 +389,111 @@ if (cursor) {
 }
 
 
-// =====================================================
-// TIMELINE
-// =====================================================
+/* =========================================================
+   TIMELINE
+========================================================= */
 
 const timelineButtons =
   $$(".timeline-dots button");
 
-
 const year =
   $("#year");
 
-
 const yearTitle =
   $("#yearTitle");
-
 
 const yearText =
   $("#yearText");
 
 
-timelineButtons.forEach(button => {
+timelineButtons.forEach((button) => {
 
-  button.onclick = () => {
-
-    timelineButtons.forEach(x => {
-
-      x.classList.remove("active");
-
-    });
+  button.addEventListener(
+    "click",
+    () => {
 
 
-    button.classList.add("active");
+      timelineButtons.forEach((item) => {
+
+        item.classList.remove("active");
+
+      });
 
 
-    [
-      year,
-      yearTitle,
-      yearText
-    ].forEach(x => {
-
-      if (x) {
-        x.style.opacity = 0;
-      }
-
-    });
-
-
-    setTimeout(() => {
-
-      if (year) {
-        year.textContent =
-          button.dataset.year;
-      }
-
-
-      if (yearTitle) {
-        yearTitle.textContent =
-          button.dataset.title;
-      }
-
-
-      if (yearText) {
-        yearText.textContent =
-          button.dataset.text;
-      }
+      button.classList.add("active");
 
 
       [
         year,
         yearTitle,
         yearText
-      ].forEach(x => {
+      ].forEach((element) => {
 
-        if (x) {
-          x.style.opacity = 1;
+        if (element) {
+
+          element.style.opacity = 0;
+
         }
 
       });
 
-    }, 220);
 
-  };
+      setTimeout(() => {
+
+
+        if (year) {
+
+          year.textContent =
+            button.dataset.year;
+
+        }
+
+
+        if (yearTitle) {
+
+          yearTitle.textContent =
+            button.dataset.title;
+
+        }
+
+
+        if (yearText) {
+
+          yearText.textContent =
+            button.dataset.text;
+
+        }
+
+
+        [
+          year,
+          yearTitle,
+          yearText
+        ].forEach((element) => {
+
+          if (element) {
+
+            element.style.opacity = 1;
+
+          }
+
+        });
+
+
+      }, 220);
+
+    }
+  );
 
 });
 
 
-// =====================================================
-// PHILOSOPHY WORD ROTATION
-// =====================================================
+/* =========================================================
+   PHILOSOPHY WORD ROTATION
+========================================================= */
 
 const words =
   $$(".changing-word .word");
-
 
 const dots =
   $$(".statement-progress i");
@@ -408,69 +501,77 @@ const dots =
 
 if (words.length) {
 
-  let wi = 0;
+  let wordIndex = 0;
 
 
   setInterval(() => {
 
+
     if (document.hidden) {
+
       return;
+
     }
 
 
-    words[wi]
+    words[wordIndex]
       .classList
       .remove("active");
 
 
-    if (dots[wi]) {
+    if (dots[wordIndex]) {
 
-      dots[wi]
+      dots[wordIndex]
         .classList
         .remove("active");
 
     }
 
 
-    wi =
-      (wi + 1) %
-      words.length;
+    wordIndex =
+      (wordIndex + 1)
+      % words.length;
 
 
-    words[wi]
+    words[wordIndex]
       .classList
       .add("active");
 
 
-    if (dots[wi]) {
+    if (dots[wordIndex]) {
 
-      dots[wi]
+      dots[wordIndex]
         .classList
         .add("active");
 
     }
+
 
   }, 2300);
 
 }
 
 
-// =====================================================
-// CYCLE CARD 3D EFFECT
-// =====================================================
+/* =========================================================
+   CYCLE CARD 3D MOVEMENT
+========================================================= */
 
 const cards =
   $$(".cycle-card");
 
 
-cards.forEach(card => {
+cards.forEach((card) => {
+
 
   card.addEventListener(
     "mousemove",
-    e => {
+    (event) => {
 
-      if (innerWidth < 900) {
+
+      if (window.innerWidth < 900) {
+
         return;
+
       }
 
 
@@ -479,21 +580,27 @@ cards.forEach(card => {
 
 
       const x =
-        e.clientX -
-        r.left -
+        event.clientX
+        -
+        r.left
+        -
         r.width / 2;
 
 
       const y =
-        e.clientY -
-        r.top -
+        event.clientY
+        -
+        r.top
+        -
         r.height / 2;
 
 
       card.style.transform =
-        `perspective(900px)
-         rotateY(${x / r.width * 4}deg)
-         rotateX(${-y / r.height * 4}deg)`;
+        `
+        perspective(900px)
+        rotateY(${x / r.width * 4}deg)
+        rotateX(${-y / r.height * 4}deg)
+        `;
 
     }
   );
@@ -511,3 +618,507 @@ cards.forEach(card => {
 });
 
 
+/* =========================================================
+   ADMISSION APPLICATION FLOW
+========================================================= */
+
+const applicationArea = document.querySelector("#applicationArea");
+const startApplication = document.querySelector("#startApplication");
+
+const applicationSteps =
+  [...document.querySelectorAll(".application-step")];
+
+const levelCards =
+  [...document.querySelectorAll(".level-card")];
+
+const stepCounter =
+  document.querySelector("#stepCounter");
+
+const formProgress =
+  document.querySelector("#formProgress");
+
+const selectedLevel =
+  document.querySelector("#selectedLevel");
+
+const kindergartenFields =
+  document.querySelector("#kindergartenFields");
+
+const primaryFields =
+  document.querySelector("#primaryFields");
+
+const primaryRules =
+  document.querySelector("#primaryRules");
+
+const prejardinNote =
+  document.querySelector("#prejardinNote");
+
+const applicationSuccess =
+  document.querySelector("#applicationSuccess");
+
+const agreement =
+  document.querySelector("#agreement");
+
+const submitApplication =
+  document.querySelector("#submitApplication");
+
+
+let currentStep = 1;
+let selectedAdmissionLevel = null;
+
+const totalSteps = 6;
+
+
+/* =========================================================
+   START APPLICATION
+========================================================= */
+
+if (startApplication && applicationArea) {
+
+  startApplication.addEventListener("click", () => {
+
+    applicationArea.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  });
+
+}
+
+
+/* =========================================================
+   LEVEL SELECTION
+========================================================= */
+
+levelCards.forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    levelCards.forEach(item => {
+      item.classList.remove("selected");
+    });
+
+    card.classList.add("selected");
+
+    selectedAdmissionLevel =
+      card.dataset.level;
+
+    updateConditionalFields();
+
+    selectedLevel.style.display = "block";
+
+    const title =
+      card.querySelector("h3").textContent;
+
+    selectedLevel.innerHTML = `
+      <strong>Niveau sélectionné :</strong>
+      ${title}
+    `;
+
+
+    /*
+      Automatically move to child information
+      after a small delay.
+    */
+
+    setTimeout(() => {
+
+      goToStep(2);
+
+    }, 350);
+
+  });
+
+});
+
+
+/* =========================================================
+   CONDITIONAL FIELDS
+========================================================= */
+
+function updateConditionalFields() {
+
+  if (!selectedAdmissionLevel) return;
+
+
+  /*
+     Kindergarten fields
+     appear for both Pre-jardin and Jardin.
+  */
+
+  if (
+    selectedAdmissionLevel === "prejardin" ||
+    selectedAdmissionLevel === "jardin"
+  ) {
+
+    kindergartenFields.classList.add("visible");
+
+  } else {
+
+    kindergartenFields.classList.remove("visible");
+
+  }
+
+
+  /*
+     Primary transfer fields
+  */
+
+  if (
+    selectedAdmissionLevel === "primaire"
+  ) {
+
+    primaryFields.classList.add("visible");
+    primaryRules.classList.add("visible");
+
+  } else {
+
+    primaryFields.classList.remove("visible");
+    primaryRules.classList.remove("visible");
+
+  }
+
+
+  /*
+     Pre-jardin special rule
+  */
+
+  if (
+    selectedAdmissionLevel === "prejardin"
+  ) {
+
+    prejardinNote.classList.add("visible");
+
+  } else {
+
+    prejardinNote.classList.remove("visible");
+
+  }
+
+}
+
+
+/* =========================================================
+   GO TO STEP
+========================================================= */
+
+function goToStep(step) {
+
+  if (step < 1) {
+    step = 1;
+  }
+
+  if (step > totalSteps) {
+    step = totalSteps;
+  }
+
+  currentStep = step;
+
+
+  applicationSteps.forEach(section => {
+
+    section.classList.remove("active");
+
+    if (
+      Number(section.dataset.step) === currentStep
+    ) {
+
+      section.classList.add("active");
+
+    }
+
+  });
+
+
+  /*
+     Update progress
+  */
+
+  const percentage =
+    (currentStep / totalSteps) * 100;
+
+  if (formProgress) {
+
+    formProgress.style.width =
+      percentage + "%";
+
+  }
+
+
+  if (stepCounter) {
+
+    stepCounter.textContent =
+      `Étape ${currentStep} / ${totalSteps}`;
+
+  }
+
+
+  /*
+     Scroll to application
+  */
+
+  if (applicationArea) {
+
+    window.scrollTo({
+      top:
+        applicationArea.offsetTop - 90,
+      behavior: "smooth"
+    });
+
+  }
+
+}
+
+
+/* =========================================================
+   NEXT BUTTONS
+========================================================= */
+
+document
+  .querySelectorAll("[data-next]")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      /*
+         On step 1 the user must choose
+         an admission level.
+      */
+
+      if (
+        currentStep === 1 &&
+        !selectedAdmissionLevel
+      ) {
+
+        alert(
+          "Veuillez sélectionner un niveau d'inscription."
+        );
+
+        return;
+
+      }
+
+
+      /*
+         Basic validation for visible
+         required fields.
+      */
+
+      if (!validateCurrentStep()) {
+
+        return;
+
+      }
+
+
+      goToStep(currentStep + 1);
+
+    });
+
+  });
+
+
+/* =========================================================
+   PREVIOUS BUTTONS
+========================================================= */
+
+document
+  .querySelectorAll("[data-prev]")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      goToStep(currentStep - 1);
+
+    });
+
+  });
+
+
+/* =========================================================
+   BASIC FORM VALIDATION
+========================================================= */
+
+function validateCurrentStep() {
+
+  const activeStep =
+    document.querySelector(
+      `.application-step[data-step="${currentStep}"]`
+    );
+
+  if (!activeStep) {
+    return true;
+  }
+
+
+  const requiredFields =
+    activeStep.querySelectorAll(
+      "input[required], select[required], textarea[required]"
+    );
+
+
+  for (const field of requiredFields) {
+
+    /*
+       Ignore hidden fields.
+    */
+
+    if (
+      field.offsetParent === null
+    ) {
+
+      continue;
+
+    }
+
+
+    if (!field.value.trim()) {
+
+      field.focus();
+
+      alert(
+        "Veuillez remplir tous les champs obligatoires (*)."
+      );
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+
+}
+
+
+/* =========================================================
+   SUBMIT APPLICATION
+========================================================= */
+
+if (submitApplication) {
+
+  submitApplication.addEventListener("click", () => {
+
+    if (!agreement.checked) {
+
+      alert(
+        "Veuillez confirmer que vous avez lu et compris les informations d'admission."
+      );
+
+      return;
+
+    }
+
+
+    /*
+       Prototype submission.
+
+       Later this can be connected to:
+       PHP / Laravel / Node.js / MySQL
+    */
+
+    applicationSteps.forEach(step => {
+
+      step.style.display = "none";
+
+    });
+
+
+    applicationSuccess.classList.add("visible");
+
+
+    if (formProgress) {
+
+      formProgress.style.width = "100%";
+
+    }
+
+
+    if (stepCounter) {
+
+      stepCounter.textContent =
+        "Demande terminée";
+
+    }
+
+
+    window.scrollTo({
+
+      top:
+        applicationArea.offsetTop - 80,
+
+      behavior: "smooth"
+
+    });
+
+  });
+
+}
+
+/* =========================================================
+   NOTRE-DAME TODAY CAROUSEL (home)
+========================================================= */
+
+const todayCarousel = document.querySelector("#todayCarousel");
+
+if (todayCarousel) {
+
+  const todayTag = document.querySelector("#todayTag");
+  const todayTitle = document.querySelector("#todayTitle");
+  const todayPrev = document.querySelector("#todayPrev");
+  const todayNext = document.querySelector("#todayNext");
+  const todayCenterPhoto = todayCarousel.querySelector(
+    ".today-slide--center .today-photo-label"
+  );
+
+  // Placeholder content only — replace tag/title text (and the
+  // .today-photo divs in the HTML) with your real photos & captions.
+  const todaySlides = [
+    { tag: "SPORT", title: "Un nouveau titre à écrire ici" },
+    { tag: "ACADÉMIQUE", title: "Un second titre à écrire ici" },
+    { tag: "CULTURE", title: "Un troisième titre à écrire ici" },
+    { tag: "SOLIDARITÉ", title: "Un quatrième titre à écrire ici" },
+    { tag: "ÉVÉNEMENT", title: "Un cinquième titre à écrire ici" }
+  ];
+
+  let todayIndex = 0;
+
+  const renderTodaySlide = () => {
+
+    const caption = todayCarousel.querySelector(".today-caption");
+
+    caption.style.opacity = "0";
+
+    setTimeout(() => {
+
+      const slide = todaySlides[todayIndex];
+
+      todayTag.textContent = slide.tag;
+      todayTitle.textContent = slide.title;
+
+      caption.style.opacity = "1";
+
+    }, 220);
+
+  };
+
+  todayPrev.addEventListener("click", () => {
+
+    todayIndex =
+      (todayIndex - 1 + todaySlides.length) % todaySlides.length;
+
+    renderTodaySlide();
+
+  });
+
+  todayNext.addEventListener("click", () => {
+
+    todayIndex =
+      (todayIndex + 1) % todaySlides.length;
+
+    renderTodaySlide();
+
+  });
+
+}
