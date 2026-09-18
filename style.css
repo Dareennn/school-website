@@ -5864,12 +5864,13 @@ body.inner-page .nav {
    HISTORY DETAIL HERO
 --------------------------------------------------------- */
 
-.history-detail-hero {
+section.page-hero.history-detail-hero {
+
+  position: relative;
 
   min-height: 70vh;
 
-  padding:
-    180px 7vw 100px;
+  padding: 180px 7vw 100px;
 
   display: flex;
 
@@ -5877,19 +5878,56 @@ body.inner-page .nav {
 
   justify-content: flex-end;
 
+  overflow: hidden;
+
+  background-color: transparent !important;
+
+  color: #fff;
+
 }
 
 
-/*
-   Override the global .page-hero > div rule.
+/* ---------------------------------------------------------
+   BLURRED BACKGROUND IMAGE
+--------------------------------------------------------- */
 
-   This keeps the history hero content aligned
-   with the left side of the page while allowing
-   .page-hero.light-page to provide the blue
-   background.
-*/
+section.page-hero.history-detail-hero::before {
 
-.history-detail-hero>div {
+  content: "";
+
+  position: absolute;
+
+  inset: -20px;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.38)),
+    url("images/notre.jpeg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  filter: blur(5px);
+
+  transform: scale(1.05);
+
+  z-index: 0;
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+--------------------------------------------------------- */
+
+section.page-hero.history-detail-hero>div {
+
+  position: relative;
+
+  z-index: 1;
 
   width: 100%;
 
@@ -5902,7 +5940,7 @@ body.inner-page .nav {
 }
 
 
-.history-detail-hero h1 {
+section.page-hero.history-detail-hero h1 {
 
   margin: 25px 0 0;
 
@@ -5919,12 +5957,11 @@ body.inner-page .nav {
 }
 
 
-.history-detail-hero h1 i {
+section.page-hero.history-detail-hero h1 i {
 
   font-style: italic;
 
 }
-
 
 /* ---------------------------------------------------------
    HISTORY STORY
