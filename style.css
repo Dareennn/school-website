@@ -219,7 +219,12 @@ select {
 
   color: #fff;
 
-  transition: .4s;
+  background: rgba(23, 44, 104, .28);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: background .4s, backdrop-filter .4s, padding .4s;
 }
 
 .nav.scrolled {
@@ -227,6 +232,7 @@ select {
   background: #243f91f2;
 
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   padding-top: 12px;
   padding-bottom: 12px;
@@ -3499,6 +3505,7 @@ body.inner-page .nav {
   background: #243f91f2;
 
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .inner-main {
@@ -6015,47 +6022,131 @@ body.inner-page .nav {
    générations) once verified dates are supplied.
 */
 
+/*
+   Chronological entries — a connected vertical timeline
+   with dot markers, used on every history chapter
+   (origines, égypte, and the campus-specific pages
+   once verified dates are supplied).
+*/
+
 .history-timeline {
+
+  position: relative;
 
   max-width: 700px;
 
-  margin: 40px 0 10px;
+  margin: 46px 0 10px;
 
-  border-top: 1px solid rgba(23, 44, 104, .12);
+  padding-left: 34px;
+
+}
+
+.history-timeline::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 6px;
+
+  bottom: 6px;
+
+  left: 6px;
+
+  width: 2px;
+
+  background: linear-gradient(180deg,
+      var(--red) 0%,
+      rgba(183, 45, 52, .35) 55%,
+      rgba(23, 44, 104, .15) 100%);
 
 }
 
 .history-timeline-item {
 
-  display: grid;
+  position: relative;
 
-  grid-template-columns: 90px 1fr;
+  padding: 0 0 38px 28px;
 
-  gap: 24px;
+}
 
-  padding: 26px 0;
+.history-timeline-item:last-child {
 
-  border-bottom: 1px solid rgba(23, 44, 104, .12);
+  padding-bottom: 2px;
+
+}
+
+.history-timeline-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+
+  left: -34px;
+
+  width: 14px;
+
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: var(--cream);
+
+  border: 2px solid var(--red);
+
+  box-shadow: 0 0 0 4px rgba(183, 45, 52, .1);
+
+  transition: transform .3s ease, box-shadow .3s ease;
+
+}
+
+.history-timeline-item:hover::before {
+
+  transform: scale(1.2);
+
+  box-shadow: 0 0 0 7px rgba(183, 45, 52, .16);
 
 }
 
 .history-timeline-year {
 
-  padding-top: 4px;
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  padding: 4px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(183, 45, 52, .08);
 
   font-family: "DM Mono", monospace;
 
-  font-size: 13px;
+  font-size: 12px;
 
   letter-spacing: .08em;
 
   color: var(--red);
+
+  transition: background .25s ease, color .25s ease;
+
+}
+
+.history-timeline-item:hover .history-timeline-year {
+
+  background: var(--red);
+
+  color: #fff;
 
 }
 
 .history-timeline-text {
 
   margin: 0;
+
+  max-width: 560px;
 
   font-family: "DM Sans", sans-serif;
 
@@ -6110,12 +6201,14 @@ body.inner-page .nav {
 
 .history-next {
 
-  padding: 80px 7vw;
+  padding: 70px 7vw 90px;
 
 }
 
 
 .history-next a {
+
+  position: relative;
 
   display: flex;
 
@@ -6125,14 +6218,94 @@ body.inner-page .nav {
 
   gap: 30px;
 
+  padding: 34px clamp(24px, 4vw, 48px);
+
+  border: 1px solid rgba(0, 0, 0, .16);
+
+  border-radius: 6px;
+
+  background: transparent;
+
   color: inherit;
 
   text-decoration: none;
 
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition:
+    border-color .35s ease,
+    transform .35s ease;
+
 }
 
 
+/* Subtle hover line */
+
+.history-next a::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform .4s ease;
+
+}
+
+
+.history-next a:hover,
+
+.history-next a:focus-visible {
+
+  border-color: currentColor;
+
+  transform: translateY(-3px);
+
+}
+
+
+.history-next a:hover::before,
+
+.history-next a:focus-visible::before {
+
+  transform: scaleX(1);
+
+}
+
+
+.history-next a:focus-visible {
+
+  outline: 2px solid currentColor;
+
+  outline-offset: 4px;
+
+}
+
+
+/* ---------------------------------------------------------
+   NEXT CHAPTER CONTENT
+--------------------------------------------------------- */
+
 .history-next a>div {
+
+  position: relative;
+
+  z-index: 1;
 
   display: flex;
 
@@ -6144,6 +6317,10 @@ body.inner-page .nav {
 
 
 .history-next span {
+
+  position: relative;
+
+  z-index: 1;
 
   font-family: "DM Mono", monospace;
 
@@ -6162,6 +6339,16 @@ body.inner-page .nav {
 
 .history-next strong {
 
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
   font-family: "Playfair Display", serif;
 
   font-size: clamp(28px, 4vw, 55px);
@@ -6172,6 +6359,65 @@ body.inner-page .nav {
 
 }
 
+
+/* ---------------------------------------------------------
+   ARROW
+--------------------------------------------------------- */
+
+.history-next-arrow {
+
+  display: inline-block;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: .58em;
+
+  transition:
+    transform .3s ease;
+
+}
+
+
+.history-next a:hover .history-next-arrow,
+
+.history-next a:focus-visible .history-next-arrow {
+
+  transform: translateX(10px);
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .history-next {
+
+    padding: 55px 7vw 70px;
+
+  }
+
+
+  .history-next a {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 28px 24px;
+
+  }
+
+
+  .history-next strong {
+
+    font-size: clamp(30px, 8vw, 48px);
+
+  }
+
+}
 
 /* ---------------------------------------------------------
    RESPONSIVE
@@ -6372,13 +6618,23 @@ body.inner-page .nav {
   }
 
 
+  .history-timeline {
+
+    padding-left: 26px;
+
+  }
+
+
   .history-timeline-item {
 
-    grid-template-columns: 1fr;
+    padding: 0 0 30px 22px;
 
-    gap: 8px;
+  }
 
-    padding: 20px 0;
+
+  .history-timeline-item::before {
+
+    left: -26px;
 
   }
 
@@ -6400,12 +6656,18 @@ body.inner-page .nav {
 
     flex-direction: column;
 
+    gap: 22px;
+
+    padding: 28px 24px;
+
   }
 
 
   .history-next strong {
 
     font-size: clamp(30px, 8vw, 48px);
+
+    gap: 12px;
 
   }
 
