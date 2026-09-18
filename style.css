@@ -5992,6 +5992,118 @@ body.inner-page .nav {
 }
 
 
+.history-story h3 {
+
+  margin: 50px 0 20px;
+
+  max-width: 700px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(22px, 2.4vw, 30px);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+}
+
+
+/*
+   Chronological entries — used on the campus-specific
+   chapters (école, bâtiments, directrices, uniformes,
+   générations) once verified dates are supplied.
+*/
+
+.history-timeline {
+
+  max-width: 700px;
+
+  margin: 40px 0 10px;
+
+  border-top: 1px solid rgba(23, 44, 104, .12);
+
+}
+
+.history-timeline-item {
+
+  display: grid;
+
+  grid-template-columns: 90px 1fr;
+
+  gap: 24px;
+
+  padding: 26px 0;
+
+  border-bottom: 1px solid rgba(23, 44, 104, .12);
+
+}
+
+.history-timeline-year {
+
+  padding-top: 4px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 13px;
+
+  letter-spacing: .08em;
+
+  color: var(--red);
+
+}
+
+.history-timeline-text {
+
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  opacity: .8;
+
+}
+
+.history-timeline-text strong {
+
+  font-weight: 600;
+
+  opacity: 1;
+
+}
+
+
+/*
+   Flags a chapter that is still waiting on verified
+   facts/photos from the school before publishing.
+*/
+
+.history-placeholder-note {
+
+  max-width: 700px;
+
+  margin-top: 30px;
+
+  padding: 20px 24px;
+
+  border-left: 3px solid var(--red);
+
+  background: rgba(183, 45, 52, .05);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 13.5px;
+
+  line-height: 1.7;
+
+  opacity: .85;
+
+}
+
+
 /* ---------------------------------------------------------
    NEXT CHAPTER
 --------------------------------------------------------- */
@@ -6256,6 +6368,17 @@ body.inner-page .nav {
     font-size: 16px;
 
     line-height: 1.8;
+
+  }
+
+
+  .history-timeline-item {
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 20px 0;
 
   }
 
