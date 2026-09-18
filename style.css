@@ -5593,7 +5593,9 @@ body.inner-page .nav {
 
 .history-page,
 .history-detail-page {
+
   overflow-x: hidden;
+
 }
 
 
@@ -5605,20 +5607,26 @@ body.inner-page .nav {
 
   display: grid;
 
-  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-columns: 180px minmax(0, 850px);
 
-  gap: 8vw;
+  column-gap: 7vw;
 
-  padding: 120px 7vw;
+  align-items: start;
+
+  padding: 90px 7vw 100px;
 
 }
 
 
 .history-intro-label {
 
+  padding-top: 8px;
+
   font-family: "DM Mono", monospace;
 
   font-size: 11px;
+
+  line-height: 1.4;
 
   letter-spacing: 0.12em;
 
@@ -5638,13 +5646,17 @@ body.inner-page .nav {
 
 .history-lead {
 
-  margin: 0 0 35px;
+  margin: 0 0 28px;
+
+  max-width: 850px;
 
   font-family: "Playfair Display", serif;
 
-  font-size: clamp(28px, 3.5vw, 52px);
+  font-size: clamp(27px, 3.2vw, 46px);
 
-  line-height: 1.15;
+  line-height: 1.18;
+
+  letter-spacing: -0.02em;
 
 }
 
@@ -5653,11 +5665,15 @@ body.inner-page .nav {
 
   max-width: 650px;
 
-  font-size: 16px;
+  margin: 0;
 
-  line-height: 1.8;
+  font-family: "DM Sans", sans-serif;
 
-  opacity: 0.7;
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  opacity: 0.65;
 
 }
 
@@ -5668,17 +5684,68 @@ body.inner-page .nav {
 
 .history-navigation {
 
-  padding: 120px 7vw;
+  padding: 105px 7vw 130px;
 
 }
 
 
 .history-navigation .section-heading {
 
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 
 }
 
+
+.history-navigation .section-heading .kicker {
+
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+
+}
+
+
+.history-navigation .section-heading h2 {
+
+  margin: 0;
+
+  max-width: 900px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(48px, 7vw, 96px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+
+}
+
+
+.history-navigation .section-heading h2 i {
+
+  font-style: italic;
+
+}
+
+
+/* ---------------------------------------------------------
+   HISTORY LINKS
+--------------------------------------------------------- */
 
 .history-links {
 
@@ -5693,13 +5760,14 @@ body.inner-page .nav {
 
   display: grid;
 
-  grid-template-columns: 70px 1fr 1fr 40px;
+  grid-template-columns:
+    70px minmax(250px, 1fr) minmax(180px, 0.6fr) 30px;
 
   align-items: center;
 
   gap: 30px;
 
-  padding: 30px 0;
+  padding: 28px 0;
 
   color: inherit;
 
@@ -5727,6 +5795,8 @@ body.inner-page .nav {
 
   font-size: 11px;
 
+  line-height: 1;
+
   opacity: 0.5;
 
 }
@@ -5736,7 +5806,9 @@ body.inner-page .nav {
 
   font-family: "Playfair Display", serif;
 
-  font-size: clamp(22px, 2.2vw, 34px);
+  font-size: clamp(22px, 2.3vw, 34px);
+
+  line-height: 1.1;
 
   font-weight: 400;
 
@@ -5749,6 +5821,8 @@ body.inner-page .nav {
 
   font-size: 13px;
 
+  line-height: 1.5;
+
   opacity: 0.55;
 
 }
@@ -5756,9 +5830,13 @@ body.inner-page .nav {
 
 .history-link em {
 
-  font-style: normal;
+  font-family: "DM Sans", sans-serif;
 
   font-size: 20px;
+
+  font-style: normal;
+
+  line-height: 1;
 
   text-align: right;
 
@@ -5786,13 +5864,12 @@ body.inner-page .nav {
 
 
 /*
-   IMPORTANT:
    Override the global .page-hero > div rule.
 
    This keeps the history hero content aligned
-   with the left side of the page while still
-   allowing .page-hero.light-page to provide
-   the blue background.
+   with the left side of the page while allowing
+   .page-hero.light-page to provide the blue
+   background.
 */
 
 .history-detail-hero>div {
@@ -5864,6 +5941,8 @@ body.inner-page .nav {
 
   font-size: 11px;
 
+  line-height: 1;
+
   letter-spacing: 0.1em;
 
   opacity: 0.5;
@@ -5890,7 +5969,9 @@ body.inner-page .nav {
 
   max-width: 700px;
 
-  margin-bottom: 25px;
+  margin: 0 0 25px;
+
+  font-family: "DM Sans", sans-serif;
 
   font-size: 17px;
 
@@ -5929,13 +6010,28 @@ body.inner-page .nav {
 }
 
 
+.history-next a>div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+
 .history-next span {
 
   font-family: "DM Mono", monospace;
 
   font-size: 10px;
 
+  line-height: 1.4;
+
   letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 
   opacity: 0.55;
 
@@ -5948,6 +6044,8 @@ body.inner-page .nav {
 
   font-size: clamp(28px, 4vw, 55px);
 
+  line-height: 1;
+
   font-weight: 400;
 
 }
@@ -5959,29 +6057,104 @@ body.inner-page .nav {
 
 @media (max-width: 800px) {
 
+
+  /* -------------------------------------------------------
+     HISTORY INTRO
+  ------------------------------------------------------- */
+
   .history-intro {
 
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 28px;
 
-    padding: 80px 7vw;
+    padding: 75px 7vw 85px;
 
   }
 
+
+  .history-intro-label {
+
+    padding-top: 0;
+
+  }
+
+
+  .history-intro-content {
+
+    max-width: 100%;
+
+  }
+
+
+  .history-lead {
+
+    max-width: 100%;
+
+    font-size: clamp(27px, 7vw, 40px);
+
+    line-height: 1.15;
+
+  }
+
+
+  .history-intro-content p:not(.history-lead) {
+
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+  }
+
+
+  /* -------------------------------------------------------
+     HISTORY NAVIGATION
+  ------------------------------------------------------- */
 
   .history-navigation {
 
-    padding: 80px 7vw;
+    padding: 80px 7vw 100px;
 
   }
 
 
+  .history-navigation .section-heading {
+
+    margin-bottom: 50px;
+
+  }
+
+
+  .history-navigation .section-heading .kicker {
+
+    margin-bottom: 20px;
+
+  }
+
+
+  .history-navigation .section-heading h2 {
+
+    font-size: clamp(45px, 12vw, 75px);
+
+    line-height: 0.95;
+
+  }
+
+
+  /* -------------------------------------------------------
+     HISTORY LINKS
+  ------------------------------------------------------- */
+
   .history-link {
 
-    grid-template-columns: 45px 1fr 25px;
+    grid-template-columns:
+      45px minmax(0, 1fr) 25px;
 
     gap: 15px;
+
+    padding: 24px 0;
 
   }
 
@@ -5993,6 +6166,26 @@ body.inner-page .nav {
   }
 
 
+  .history-link strong {
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+  }
+
+
+  .history-link em {
+
+    font-size: 18px;
+
+  }
+
+
+  /* -------------------------------------------------------
+     DETAIL HERO
+  ------------------------------------------------------- */
+
   .history-detail-hero {
 
     min-height: 65vh;
@@ -6002,10 +6195,6 @@ body.inner-page .nav {
 
   }
 
-
-  /*
-     Keep the override on mobile too.
-  */
 
   .history-detail-hero>div {
 
@@ -6027,6 +6216,10 @@ body.inner-page .nav {
   }
 
 
+  /* -------------------------------------------------------
+     DETAIL STORY
+  ------------------------------------------------------- */
+
   .history-story {
 
     padding: 80px 7vw 110px;
@@ -6041,6 +6234,26 @@ body.inner-page .nav {
   }
 
 
+  .history-story h2 {
+
+    font-size: clamp(38px, 10vw, 58px);
+
+  }
+
+
+  .history-story p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+  }
+
+
+  /* -------------------------------------------------------
+     NEXT CHAPTER
+  ------------------------------------------------------- */
+
   .history-next {
 
     padding: 60px 7vw;
@@ -6053,6 +6266,13 @@ body.inner-page .nav {
     align-items: flex-start;
 
     flex-direction: column;
+
+  }
+
+
+  .history-next strong {
+
+    font-size: clamp(30px, 8vw, 48px);
 
   }
 
