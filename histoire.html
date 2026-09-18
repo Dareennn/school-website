@@ -2,116 +2,225 @@
 <html lang="fr">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Notre-Dame de la Délivrande — Al-Daher.">
-  <title>Les Cycles — Notre-Dame de la Délivrande</title>
+
+  <meta name="description" content="L'histoire de Notre-Dame de la Délivrande — Al-Daher.">
+
+  <title>Histoire — Notre-Dame de la Délivrande</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
     rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body class="inner-page">
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="school-logo"><img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo">
-      </div>
-      <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
-      <strong>Al-Daher</strong>
-      <div class="loader-line"><i></i></div>
-      <small>DEPUIS 1921 · LE CAIRE</small>
-    </div>
-  </div>
 
-  <div class="progress" id="progress"></div>
-  <div class="grain"></div>
-  <div class="cursor" id="cursor"><span></span></div>
+<body class="inner-page history-page">
 
-  <header class="nav" id="nav">
-    <a class="brand" href="index.html">
-      <span>NOTRE-DAME</span>
-      <em>DE LA DÉLIVRANDE · Al-Daher</em>
-    </a>
-    <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="histoire.html">Histoire</a>
-      <a href="cycles.html">Cycles</a>
-      <a href="vie.html">Vie de l'école</a>
-      <a href="actualites.html">Actualités</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-right">
-      <a class="nav-admission" href="admission.html">Admission <span>↗</span></a>
-    </div>
-  </header>
+  <!-- Shared loader -->
+  <div id="loader-container"></div>
 
-  <main class="inner-main">
+  <!-- Shared header -->
+  <div id="header-container"></div>
+
+
+  <main>
+
+
+
     <section class="page-hero light-page">
+
       <div>
-        <p class="kicker">02 — Historique</p>
-        <h1>Grandir avec<br><i>confiance.</i></h1>
-        <p>Un parcours adapté à chaque âge, de la maternelle au secondaire.</p>
+
+        <span class="kicker">
+          02 — Histoire
+        </span>
+
+        <h1>
+          Une histoire<br>
+          <i>à transmettre.</i>
+        </h1>
+
+        <p>
+          Depuis 1921, Notre-Dame de la Délivrande
+          accompagne des générations d'élèves au
+          cœur du Caire.
+        </p>
+
       </div>
+
     </section>
-    <section class="cycles section-light">
-      <div class="cycle-grid">
-        <article class="cycle-card">
-          <div class="cycle-image"><img
-              src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=85"
-              alt="Maternelle"></div>
-          <div class="cycle-info"><span>01</span>
-            <h3>Maternelle</h3>
-            <p>Les premiers apprentissages dans un environnement joyeux et sécurisant.</p><b>↗</b>
-          </div>
-        </article>
-        <article class="cycle-card">
-          <div class="cycle-image"><img
-              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85"
-              alt="Primaire"></div>
-          <div class="cycle-info"><span>02</span>
-            <h3>Primaire</h3>
-            <p>Développer les connaissances, la curiosité et le plaisir d'apprendre.</p><b>↗</b>
-          </div>
-        </article>
-        <article class="cycle-card">
-          <div class="cycle-image"><img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85"
-              alt="Préparatoire"></div>
-          <div class="cycle-info"><span>03</span>
-            <h3>Préparatoire</h3>
-            <p>Grandir en autonomie, en responsabilité et en confiance.</p><b>↗</b>
-          </div>
-        </article>
-        <article class="cycle-card">
-          <div class="cycle-image"><img
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85"
-              alt="Secondaire"></div>
-          <div class="cycle-info"><span>04</span>
-            <h3>Secondaire</h3>
-            <p>Préparer l'avenir avec ambition, ouverture et solidité académique.</p><b>↗</b>
-          </div>
-        </article>
+
+
+
+
+    <section class="history-intro section-light">
+
+      <div class="history-intro-label">
+        NOTRE HISTOIRE
       </div>
+
+      <div class="history-intro-content">
+
+        <p class="history-lead">
+          Une école ne se résume pas à ses murs.
+          Elle se construit à travers les personnes
+          qui l'ont fait vivre, les générations qui
+          l'ont traversée et les valeurs qui se
+          transmettent avec le temps.
+        </p>
+
+        <p>
+          Découvrez les différentes étapes de
+          l'histoire de Notre-Dame de la Délivrande
+          et les personnes qui ont contribué à son
+          identité.
+        </p>
+
+      </div>
+
     </section>
+
+
+
+
+    <section class="history-navigation section-dark">
+
+      <div class="section-heading">
+
+        <span class="kicker">
+          LES CHAPITRES
+        </span>
+
+        <h2>
+          Une histoire<br>
+          <i>en plusieurs temps.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="history-links">
+
+        <a href="histoire-origines.html" class="history-link">
+          <span>01</span>
+
+          <strong>
+            Aux origines
+          </strong>
+
+          <small>
+            Les débuts de la Délivrande
+          </small>
+
+        </a>
+
+
+        <a href="histoire-egypte.html" class="history-link">
+          <span>02</span>
+
+          <strong>
+            Délivrande en Égypte
+          </strong>
+
+          <small>
+            L'arrivée et le développement
+          </small>
+
+        </a>
+
+
+        <a href="histoire-ecole.html" class="history-link">
+          <span>03</span>
+
+          <strong>
+            L'école d'Al-Daher
+          </strong>
+
+          <small>
+            L'histoire de notre établissement
+          </small>
+
+        </a>
+
+
+        <a href="histoire-batiments.html" class="history-link">
+          <span>04</span>
+
+          <strong>
+            Les bâtiments
+          </strong>
+
+          <small>
+            Les lieux qui ont accompagné l'école
+          </small>
+
+        </a>
+
+
+        <a href="histoire-directrices.html" class="history-link">
+          <span>05</span>
+
+          <strong>
+            Les directrices
+          </strong>
+
+          <small>
+            Celles qui ont dirigé l'établissement
+          </small>
+
+        </a>
+
+
+        <a href="histoire-uniformes.html" class="history-link">
+          <span>06</span>
+
+          <strong>
+            Les uniformes
+          </strong>
+
+          <small>
+            Une identité qui évolue
+          </small>
+
+        </a>
+
+
+        <a href="histoire-generations.html" class="history-link">
+          <span>07</span>
+
+          <strong>
+            Les générations
+          </strong>
+
+          <small>
+            Une école portée par ses élèves
+          </small>
+
+
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand"><span>NOTRE-DAME</span><em>DE LA DÉLIVRANDE · Al-Daher</em></div>
-      <div class="footer-tag">Joie.<br>Bonheur.<br>Servir.</div>
-      <div class="footer-address">Daher, 5 Habib Shalaby, Berket AZ Zatli, Bab El Sharia, Gouvernorat du Caire<br>(02)
-        2415 5192</div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Notre-Dame de la Délivrande</span>
-      <div><a href="#">Facebook</a><a href="#">YouTube</a><a href="vie.html">Galerie</a></div>
-      <span>Prototype</span>
-    </div>
-  </footer>
+
+  <div id="footer-container"></div>
+
+
   <script src="script.js"></script>
+
 </body>
 
 </html>

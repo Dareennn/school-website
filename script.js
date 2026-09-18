@@ -9,18 +9,16 @@ const $$ = (selector) => [
 ];
 
 
-/* =========================================================
-   HEADER / FOOTER / LOADER INJECTION
-   (inner pages only include empty containers —
-   #header-container, #footer-container, #loader-container —
-   so the shared markup is injected here before anything
-   else on the page tries to query it, e.g. #nav, #loader.)
-========================================================= */
+
 
 const headerContainer = $("#header-container");
 const footerContainer = $("#footer-container");
 const loaderContainer = $("#loader-container");
 
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 if (headerContainer) {
 
@@ -38,53 +36,161 @@ if (headerContainer) {
 
       <nav class="nav-links" aria-label="Navigation principale">
 
-        <a href="index.html">Accueil</a>
 
-        <a href="histoire.html">Histoire</a>
+        <!-- =================================================
+             ACCUEIL
+        ================================================== -->
 
-<div class="nav-dropdown">
+        <a href="index.html">
+          Accueil
+        </a>
 
-  <a href="cycles.html" class="nav-dropdown-toggle">
-    Cycles
-    <span class="nav-arrow" aria-hidden="true">⌄</span>
-  </a>
 
-  <div class="nav-dropdown-menu">
+        <!-- =================================================
+             HISTOIRE DROPDOWN
+        ================================================== -->
 
-    <a href="maternelle.html">Maternelle</a>
+        <div class="nav-dropdown">
 
-    <a href="primaire.html">Primaire</a>
+          <a
+            href="histoire.html"
+            class="nav-dropdown-toggle"
+          >
 
-    <a href="preparatoire.html">Préparatoire</a>
+            Histoire
 
-    <a href="secondaire.html">Secondaire</a>
+            <span
+              class="nav-arrow"
+              aria-hidden="true"
+            >⌄</span>
 
-  </div>
+          </a>
 
-</div>
-        <a href="vie.html">Vie de l'école</a>
 
-        <a href="actualites.html">Actualités</a>
+          <div class="nav-dropdown-menu">
 
-        <a href="contact.html">Contact</a>
+            <a href="histoire-origines.html">
+              Aux origines
+            </a>
+
+            <a href="histoire-egypte.html">
+              Délivrande en Égypte
+            </a>
+
+            <a href="histoire-ecole.html">
+              L'école d'Al-Daher
+            </a>
+
+            <a href="histoire-batiments.html">
+              Les bâtiments
+            </a>
+
+            <a href="histoire-directrices.html">
+              Les directrices
+            </a>
+
+            <a href="histoire-uniformes.html">
+              Les uniformes
+            </a>
+
+            <a href="histoire-generations.html">
+              Les générations
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CYCLES DROPDOWN
+        ================================================== -->
+
+        <div class="nav-dropdown">
+
+          <a
+            href="cycles.html"
+            class="nav-dropdown-toggle"
+          >
+
+            Cycles
+
+            <span
+              class="nav-arrow"
+              aria-hidden="true"
+            >⌄</span>
+
+          </a>
+
+
+          <div class="nav-dropdown-menu">
+
+            <a href="maternelle.html">
+              Maternelle
+            </a>
+
+            <a href="primaire.html">
+              Primaire
+            </a>
+
+            <a href="preparatoire.html">
+              Préparatoire
+            </a>
+
+            <a href="secondaire.html">
+              Secondaire
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             OTHER PAGES
+        ================================================== -->
+
+        <a href="vie.html">
+          Vie de l'école
+        </a>
+
+        <a href="actualites.html">
+          Actualités
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
 
       </nav>
 
 
+      <!-- =================================================
+           ADMISSION
+      ================================================== -->
+
       <div class="nav-right">
 
-        <a class="nav-admission" href="admission.html">
+        <a
+          class="nav-admission"
+          href="admission.html"
+        >
           Admission
-          <span>↗</span>
         </a>
 
       </div>
+
 
     </header>
   `;
 
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 if (footerContainer) {
 
@@ -94,23 +200,36 @@ if (footerContainer) {
       <div class="footer-top">
 
         <div class="footer-brand">
+
           <span>NOTRE-DAME</span>
-          <em>DE LA DÉLIVRANDE · Al-Daher</em>
+
+          <em>
+            DE LA DÉLIVRANDE · Al-Daher
+          </em>
+
         </div>
 
+
         <div class="footer-tag">
+
           Joie.<br>
           Bonheur.<br>
           Servir.
+
         </div>
 
+
         <div class="footer-address">
+
           Daher, 5 Habib Shalaby,
           Berket AZ Zatli,
           Bab El Sharia,
           Gouvernorat du Caire
+
           <br>
+
           (02) 2415 5192
+
         </div>
 
       </div>
@@ -118,15 +237,31 @@ if (footerContainer) {
 
       <div class="footer-bottom">
 
-        <span>© 2026 Notre-Dame de la Délivrande</span>
+        <span>
+          © 2026 Notre-Dame de la Délivrande
+        </span>
+
 
         <div>
-          <a href="#">Facebook</a>
-          <a href="#">YouTube</a>
-          <a href="vie.html">Galerie</a>
+
+          <a href="#">
+            Facebook
+          </a>
+
+          <a href="#">
+            YouTube
+          </a>
+
+          <a href="vie.html">
+            Galerie
+          </a>
+
         </div>
 
-        <span>Prototype</span>
+
+        <span>
+          Prototype
+        </span>
 
       </div>
 
@@ -136,6 +271,10 @@ if (footerContainer) {
 }
 
 
+/* =========================================================
+   LOADER
+========================================================= */
+
 if (loaderContainer) {
 
   loaderContainer.innerHTML = `
@@ -144,16 +283,35 @@ if (loaderContainer) {
       <div class="loader-inner">
 
         <div class="school-logo">
-          <img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo">
+
+          <img
+            src="images/notre_dame_school_logo.jpg"
+            alt="Notre-Dame de la Délivrande logo"
+          >
+
         </div>
 
-        <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
 
-        <strong>Al-Daher</strong>
+        <div class="school-name">
+          NOTRE-DAME DE LA DÉLIVRANDE
+        </div>
 
-        <div class="loader-line"><i></i></div>
 
-        <small>DEPUIS 1921 · LE CAIRE</small>
+        <strong>
+          Al-Daher
+        </strong>
+
+
+        <div class="loader-line">
+
+          <i></i>
+
+        </div>
+
+
+        <small>
+          DEPUIS 1921 · LE CAIRE
+        </small>
 
       </div>
 
@@ -164,7 +322,7 @@ if (loaderContainer) {
 
 
 /* =========================================================
-   LOADER
+   LOADER ANIMATION
 ========================================================= */
 
 const loader = $("#loader");
@@ -198,7 +356,9 @@ function scrollFX() {
   const y = window.scrollY;
 
 
-  /* Navbar */
+  /* -------------------------------------------------------
+     NAVBAR
+  ------------------------------------------------------- */
 
   if (nav) {
 
@@ -210,13 +370,17 @@ function scrollFX() {
   }
 
 
-  /* Reading progress */
+  /* -------------------------------------------------------
+     READING PROGRESS
+  ------------------------------------------------------- */
 
   if (progress) {
 
     const max =
       document.documentElement.scrollHeight
-      - window.innerHeight;
+      -
+      window.innerHeight;
+
 
     progress.style.width =
       (
@@ -228,12 +392,15 @@ function scrollFX() {
   }
 
 
-  /* Parallax */
+  /* -------------------------------------------------------
+     PARALLAX
+  ------------------------------------------------------- */
 
   $$("[data-parallax]").forEach((el) => {
 
     const r =
       el.parentElement.getBoundingClientRect();
+
 
     const a =
       (
@@ -246,13 +413,16 @@ function scrollFX() {
         )
       ) * .035;
 
+
     el.style.transform =
       `translate3d(0,${a}px,0) scale(1.04)`;
 
   });
 
 
-  /* Horizontal facilities */
+  /* -------------------------------------------------------
+     HORIZONTAL FACILITIES
+  ------------------------------------------------------- */
 
   const track =
     $(".facility-track");
@@ -270,8 +440,10 @@ function scrollFX() {
     const r =
       section.getBoundingClientRect();
 
+
     const denominator =
       r.height - window.innerHeight;
+
 
     const p =
       denominator > 0
@@ -279,13 +451,15 @@ function scrollFX() {
           Math.max(
             (
               window.innerHeight
-              - r.top
+              -
+              r.top
             ) / denominator,
             0
           ),
           1
         )
         : 0;
+
 
     const maxX =
       Math.max(
@@ -296,6 +470,7 @@ function scrollFX() {
         window.innerWidth * .08,
         0
       );
+
 
     track.style.transform =
       `translate3d(${-p * maxX}px,0,0)`;
@@ -311,10 +486,12 @@ window.addEventListener(
   { passive: true }
 );
 
+
 window.addEventListener(
   "resize",
   scrollFX
 );
+
 
 scrollFX();
 
@@ -334,6 +511,7 @@ $$(".nav-links a").forEach((link) => {
   const href =
     link.getAttribute("href");
 
+
   if (href === current) {
 
     link.classList.add("active");
@@ -344,20 +522,28 @@ $$(".nav-links a").forEach((link) => {
 
 
 /* =========================================================
-   CYCLES NAVIGATION DROPDOWN
+   NAVIGATION DROPDOWNS
+   Handles BOTH:
+   - Histoire
+   - Cycles
 ========================================================= */
 
-const cycleDropdowns =
+const navDropdowns =
   $$(".nav-dropdown");
 
 
-cycleDropdowns.forEach((dropdown) => {
+navDropdowns.forEach((dropdown) => {
 
   const toggle =
-    dropdown.querySelector(".nav-dropdown-toggle");
+    dropdown.querySelector(
+      ".nav-dropdown-toggle"
+    );
+
 
   const menu =
-    dropdown.querySelector(".nav-dropdown-menu");
+    dropdown.querySelector(
+      ".nav-dropdown-menu"
+    );
 
 
   if (!toggle || !menu) {
@@ -365,33 +551,40 @@ cycleDropdowns.forEach((dropdown) => {
   }
 
 
-  /* ---------------------------------------------
+  /* -------------------------------------------------------
      CLICK / TAP TO OPEN
-  --------------------------------------------- */
+  ------------------------------------------------------- */
 
   toggle.addEventListener("click", (event) => {
 
     /*
-       On desktop the first click opens the dropdown
-       instead of immediately navigating to cycles.html.
+       If the dropdown is closed:
 
-       On the second click, the normal link works and
-       takes the user to cycles.html.
+       - prevent navigation
+       - open dropdown
+       - close other dropdowns
+
+       If it is already open:
+
+       - allow the normal link to work
+       - therefore Histoire → histoire.html
+       - or Cycles → cycles.html
     */
 
     if (!dropdown.classList.contains("open")) {
 
       event.preventDefault();
 
-      /*
-         Close any other open dropdowns.
-      */
 
-      cycleDropdowns.forEach((otherDropdown) => {
+      navDropdowns.forEach((otherDropdown) => {
 
-        if (otherDropdown !== dropdown) {
+        if (
+          otherDropdown !== dropdown
+        ) {
 
-          otherDropdown.classList.remove("open");
+          otherDropdown.classList.remove(
+            "open"
+          );
 
         }
 
@@ -405,89 +598,105 @@ cycleDropdowns.forEach((dropdown) => {
   });
 
 
-  /* ---------------------------------------------
+  /* -------------------------------------------------------
      KEYBOARD ACCESSIBILITY
-  --------------------------------------------- */
+  ------------------------------------------------------- */
 
-  toggle.addEventListener("keydown", (event) => {
+  toggle.addEventListener(
+    "keydown",
+    (event) => {
 
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      toggle.click();
+        toggle.click();
 
-    }
-
-  });
-
-
-  /* ---------------------------------------------
-     PREVENT DROPDOWN FROM CLOSING WHEN CLICKED
-  --------------------------------------------- */
-
-  menu.addEventListener("click", (event) => {
-
-    /*
-       Stage links should navigate normally.
-
-       We intentionally do NOT preventDefault here.
-    */
-
-    const stageLink =
-      event.target.closest("a");
-
-    if (stageLink) {
-
-      dropdown.classList.remove("open");
+      }
 
     }
+  );
 
-  });
+
+  /* -------------------------------------------------------
+     DROPDOWN LINKS
+  ------------------------------------------------------- */
+
+  menu.addEventListener(
+    "click",
+    (event) => {
+
+      const submenuLink =
+        event.target.closest("a");
+
+
+      if (submenuLink) {
+
+        dropdown.classList.remove(
+          "open"
+        );
+
+      }
+
+    }
+  );
 
 });
 
 
-/* ---------------------------------------------
-   CLOSE DROPDOWN WHEN CLICKING OUTSIDE
---------------------------------------------- */
+/* ---------------------------------------------------------
+   CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
+--------------------------------------------------------- */
 
-document.addEventListener("click", (event) => {
+document.addEventListener(
+  "click",
+  (event) => {
 
-  cycleDropdowns.forEach((dropdown) => {
+    navDropdowns.forEach((dropdown) => {
 
-    if (!dropdown.contains(event.target)) {
+      if (
+        !dropdown.contains(event.target)
+      ) {
 
-      dropdown.classList.remove("open");
+        dropdown.classList.remove(
+          "open"
+        );
 
-    }
+      }
 
-  });
+    });
 
-});
-
-
-/* ---------------------------------------------
-   CLOSE DROPDOWN WITH ESCAPE
---------------------------------------------- */
-
-document.addEventListener("keydown", (event) => {
-
-  if (event.key !== "Escape") {
-    return;
   }
+);
 
 
-  cycleDropdowns.forEach((dropdown) => {
+/* ---------------------------------------------------------
+   CLOSE DROPDOWNS WITH ESCAPE
+--------------------------------------------------------- */
 
-    dropdown.classList.remove("open");
+document.addEventListener(
+  "keydown",
+  (event) => {
 
-  });
+    if (event.key !== "Escape") {
+      return;
+    }
 
-});
+
+    navDropdowns.forEach((dropdown) => {
+
+      dropdown.classList.remove(
+        "open"
+      );
+
+    });
+
+  }
+);
+
 
 /* =========================================================
    TIMELINE
@@ -496,11 +705,14 @@ document.addEventListener("keydown", (event) => {
 const timelineButtons =
   $$(".timeline-dots button");
 
+
 const year =
   $("#year");
 
+
 const yearTitle =
   $("#yearTitle");
+
 
 const yearText =
   $("#yearText");
@@ -511,7 +723,6 @@ timelineButtons.forEach((button) => {
   button.addEventListener(
     "click",
     () => {
-
 
       timelineButtons.forEach((item) => {
 
@@ -539,7 +750,6 @@ timelineButtons.forEach((button) => {
 
 
       setTimeout(() => {
-
 
         if (year) {
 
@@ -579,7 +789,6 @@ timelineButtons.forEach((button) => {
 
         });
 
-
       }, 220);
 
     }
@@ -595,6 +804,7 @@ timelineButtons.forEach((button) => {
 const words =
   $$(".changing-word .word");
 
+
 const dots =
   $$(".statement-progress i");
 
@@ -606,12 +816,8 @@ if (words.length) {
 
   setInterval(() => {
 
-
-
     if (document.hidden) {
-
       return;
-
     }
 
 
@@ -647,7 +853,6 @@ if (words.length) {
 
     }
 
-
   }, 2300);
 
 }
@@ -668,11 +873,8 @@ cards.forEach((card) => {
     "mousemove",
     (event) => {
 
-
       if (window.innerWidth < 900) {
-
         return;
-
       }
 
 
@@ -723,47 +925,96 @@ cards.forEach((card) => {
    ADMISSION APPLICATION FLOW
 ========================================================= */
 
-const applicationArea = document.querySelector("#applicationArea");
-const startApplication = document.querySelector("#startApplication");
+const applicationArea =
+  document.querySelector(
+    "#applicationArea"
+  );
+
+
+const startApplication =
+  document.querySelector(
+    "#startApplication"
+  );
+
 
 const applicationSteps =
-  [...document.querySelectorAll(".application-step")];
+  [
+    ...document.querySelectorAll(
+      ".application-step"
+    )
+  ];
+
 
 const levelCards =
-  [...document.querySelectorAll(".level-card")];
+  [
+    ...document.querySelectorAll(
+      ".level-card"
+    )
+  ];
+
 
 const stepCounter =
-  document.querySelector("#stepCounter");
+  document.querySelector(
+    "#stepCounter"
+  );
+
 
 const formProgress =
-  document.querySelector("#formProgress");
+  document.querySelector(
+    "#formProgress"
+  );
+
 
 const selectedLevel =
-  document.querySelector("#selectedLevel");
+  document.querySelector(
+    "#selectedLevel"
+  );
+
 
 const kindergartenFields =
-  document.querySelector("#kindergartenFields");
+  document.querySelector(
+    "#kindergartenFields"
+  );
+
 
 const primaryFields =
-  document.querySelector("#primaryFields");
+  document.querySelector(
+    "#primaryFields"
+  );
+
 
 const primaryRules =
-  document.querySelector("#primaryRules");
+  document.querySelector(
+    "#primaryRules"
+  );
+
 
 const prejardinNote =
-  document.querySelector("#prejardinNote");
+  document.querySelector(
+    "#prejardinNote"
+  );
+
 
 const applicationSuccess =
-  document.querySelector("#applicationSuccess");
+  document.querySelector(
+    "#applicationSuccess"
+  );
+
 
 const agreement =
-  document.querySelector("#agreement");
+  document.querySelector(
+    "#agreement"
+  );
+
 
 const submitApplication =
-  document.querySelector("#submitApplication");
+  document.querySelector(
+    "#submitApplication"
+  );
 
 
 let currentStep = 1;
+
 let selectedAdmissionLevel = null;
 
 const totalSteps = 6;
@@ -773,16 +1024,22 @@ const totalSteps = 6;
    START APPLICATION
 ========================================================= */
 
-if (startApplication && applicationArea) {
+if (
+  startApplication &&
+  applicationArea
+) {
 
-  startApplication.addEventListener("click", () => {
+  startApplication.addEventListener(
+    "click",
+    () => {
 
-    applicationArea.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+      applicationArea.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
-  });
+    }
+  );
 
 }
 
@@ -791,44 +1048,61 @@ if (startApplication && applicationArea) {
    LEVEL SELECTION
 ========================================================= */
 
-levelCards.forEach(card => {
+levelCards.forEach((card) => {
 
-  card.addEventListener("click", () => {
+  card.addEventListener(
+    "click",
+    () => {
 
-    levelCards.forEach(item => {
-      item.classList.remove("selected");
-    });
+      levelCards.forEach((item) => {
 
-    card.classList.add("selected");
+        item.classList.remove(
+          "selected"
+        );
 
-    selectedAdmissionLevel =
-      card.dataset.level;
-
-    updateConditionalFields();
-
-    selectedLevel.style.display = "block";
-
-    const title =
-      card.querySelector("h3").textContent;
-
-    selectedLevel.innerHTML = `
-      <strong>Niveau sélectionné :</strong>
-      ${title}
-    `;
+      });
 
 
-    /*
-      Automatically move to child information
-      after a small delay.
-    */
+      card.classList.add(
+        "selected"
+      );
 
-    setTimeout(() => {
 
-      goToStep(2);
+      selectedAdmissionLevel =
+        card.dataset.level;
 
-    }, 350);
 
-  });
+      updateConditionalFields();
+
+
+      if (selectedLevel) {
+
+        selectedLevel.style.display =
+          "block";
+
+
+        const title =
+          card.querySelector("h3");
+
+
+        selectedLevel.innerHTML = `
+          <strong>
+            Niveau sélectionné :
+          </strong>
+          ${title ? title.textContent : ""}
+        `;
+
+      }
+
+
+      setTimeout(() => {
+
+        goToStep(2);
+
+      }, 350);
+
+    }
+  );
 
 });
 
@@ -839,60 +1113,113 @@ levelCards.forEach(card => {
 
 function updateConditionalFields() {
 
-  if (!selectedAdmissionLevel) return;
+  if (!selectedAdmissionLevel) {
+    return;
+  }
 
 
-  /*
-     Kindergarten fields
-     appear for both Pre-jardin and Jardin.
-  */
+  /* -------------------------------------------------------
+     KINDERGARTEN
+  ------------------------------------------------------- */
 
   if (
     selectedAdmissionLevel === "prejardin" ||
     selectedAdmissionLevel === "jardin"
   ) {
 
-    kindergartenFields.classList.add("visible");
+    if (kindergartenFields) {
+
+      kindergartenFields.classList.add(
+        "visible"
+      );
+
+    }
 
   } else {
 
-    kindergartenFields.classList.remove("visible");
+    if (kindergartenFields) {
+
+      kindergartenFields.classList.remove(
+        "visible"
+      );
+
+    }
 
   }
 
 
-  /*
-     Primary transfer fields
-  */
+  /* -------------------------------------------------------
+     PRIMARY TRANSFER
+  ------------------------------------------------------- */
 
   if (
     selectedAdmissionLevel === "primaire"
   ) {
 
-    primaryFields.classList.add("visible");
-    primaryRules.classList.add("visible");
+    if (primaryFields) {
+
+      primaryFields.classList.add(
+        "visible"
+      );
+
+    }
+
+
+    if (primaryRules) {
+
+      primaryRules.classList.add(
+        "visible"
+      );
+
+    }
 
   } else {
 
-    primaryFields.classList.remove("visible");
-    primaryRules.classList.remove("visible");
+    if (primaryFields) {
+
+      primaryFields.classList.remove(
+        "visible"
+      );
+
+    }
+
+
+    if (primaryRules) {
+
+      primaryRules.classList.remove(
+        "visible"
+      );
+
+    }
 
   }
 
 
-  /*
-     Pre-jardin special rule
-  */
+  /* -------------------------------------------------------
+     PRE-JARDIN
+  ------------------------------------------------------- */
 
   if (
     selectedAdmissionLevel === "prejardin"
   ) {
 
-    prejardinNote.classList.add("visible");
+    if (prejardinNote) {
+
+      prejardinNote.classList.add(
+        "visible"
+      );
+
+    }
 
   } else {
 
-    prejardinNote.classList.remove("visible");
+    if (prejardinNote) {
+
+      prejardinNote.classList.remove(
+        "visible"
+      );
+
+    }
 
   }
 
@@ -909,34 +1236,46 @@ function goToStep(step) {
     step = 1;
   }
 
+
   if (step > totalSteps) {
     step = totalSteps;
   }
 
+
   currentStep = step;
 
 
-  applicationSteps.forEach(section => {
+  applicationSteps.forEach(
+    (section) => {
 
-    section.classList.remove("active");
+      section.classList.remove(
+        "active"
+      );
 
-    if (
-      Number(section.dataset.step) === currentStep
-    ) {
 
-      section.classList.add("active");
+      if (
+        Number(section.dataset.step)
+        ===
+        currentStep
+      ) {
+
+        section.classList.add(
+          "active"
+        );
+
+      }
 
     }
+  );
 
-  });
 
-
-  /*
-     Update progress
-  */
+  /* -------------------------------------------------------
+     PROGRESS
+  ------------------------------------------------------- */
 
   const percentage =
     (currentStep / totalSteps) * 100;
+
 
   if (formProgress) {
 
@@ -954,16 +1293,19 @@ function goToStep(step) {
   }
 
 
-  /*
-     Scroll to application
-  */
+  /* -------------------------------------------------------
+     SCROLL
+  ------------------------------------------------------- */
 
   if (applicationArea) {
 
     window.scrollTo({
+
       top:
         applicationArea.offsetTop - 90,
+
       behavior: "smooth"
+
     });
 
   }
@@ -977,44 +1319,41 @@ function goToStep(step) {
 
 document
   .querySelectorAll("[data-next]")
-  .forEach(button => {
+  .forEach((button) => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      /*
-         On step 1 the user must choose
-         an admission level.
-      */
+        if (
+          currentStep === 1 &&
+          !selectedAdmissionLevel
+        ) {
 
-      if (
-        currentStep === 1 &&
-        !selectedAdmissionLevel
-      ) {
+          alert(
+            "Veuillez sélectionner un niveau d'inscription."
+          );
 
-        alert(
-          "Veuillez sélectionner un niveau d'inscription."
+          return;
+
+        }
+
+
+        if (
+          !validateCurrentStep()
+        ) {
+
+          return;
+
+        }
+
+
+        goToStep(
+          currentStep + 1
         );
 
-        return;
-
       }
-
-
-      /*
-         Basic validation for visible
-         required fields.
-      */
-
-      if (!validateCurrentStep()) {
-
-        return;
-
-      }
-
-
-      goToStep(currentStep + 1);
-
-    });
+    );
 
   });
 
@@ -1025,13 +1364,18 @@ document
 
 document
   .querySelectorAll("[data-prev]")
-  .forEach(button => {
+  .forEach((button) => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      goToStep(currentStep - 1);
+        goToStep(
+          currentStep - 1
+        );
 
-    });
+      }
+    );
 
   });
 
@@ -1047,6 +1391,7 @@ function validateCurrentStep() {
       `.application-step[data-step="${currentStep}"]`
     );
 
+
   if (!activeStep) {
     return true;
   }
@@ -1058,11 +1403,9 @@ function validateCurrentStep() {
     );
 
 
-  for (const field of requiredFields) {
-
-    /*
-       Ignore hidden fields.
-    */
+  for (
+    const field of requiredFields
+  ) {
 
     if (
       field.offsetParent === null
@@ -1073,13 +1416,17 @@ function validateCurrentStep() {
     }
 
 
-    if (!field.value.trim()) {
+    if (
+      !field.value.trim()
+    ) {
 
       field.focus();
+
 
       alert(
         "Veuillez remplir tous les champs obligatoires (*)."
       );
+
 
       return false;
 
@@ -1099,127 +1446,243 @@ function validateCurrentStep() {
 
 if (submitApplication) {
 
-  submitApplication.addEventListener("click", () => {
+  submitApplication.addEventListener(
+    "click",
+    () => {
 
-    if (!agreement.checked) {
+      if (
+        !agreement ||
+        !agreement.checked
+      ) {
 
-      alert(
-        "Veuillez confirmer que vous avez lu et compris les informations d'admission."
+        alert(
+          "Veuillez confirmer que vous avez lu et compris les informations d'admission."
+        );
+
+        return;
+
+      }
+
+
+      applicationSteps.forEach(
+        (step) => {
+
+          step.style.display =
+            "none";
+
+        }
       );
 
-      return;
+
+      if (applicationSuccess) {
+
+        applicationSuccess.classList.add(
+          "visible"
+        );
+
+      }
+
+
+      if (formProgress) {
+
+        formProgress.style.width =
+          "100%";
+
+      }
+
+
+      if (stepCounter) {
+
+        stepCounter.textContent =
+          "Demande terminée";
+
+      }
+
+
+      if (applicationArea) {
+
+        window.scrollTo({
+
+          top:
+            applicationArea.offsetTop - 80,
+
+          behavior: "smooth"
+
+        });
+
+      }
 
     }
-
-
-    /*
-       Prototype submission.
-
-       Later this can be connected to:
-       PHP / Laravel / Node.js / MySQL
-    */
-
-    applicationSteps.forEach(step => {
-
-      step.style.display = "none";
-
-    });
-
-
-    applicationSuccess.classList.add("visible");
-
-
-    if (formProgress) {
-
-      formProgress.style.width = "100%";
-
-    }
-
-
-    if (stepCounter) {
-
-      stepCounter.textContent =
-        "Demande terminée";
-
-    }
-
-
-    window.scrollTo({
-
-      top:
-        applicationArea.offsetTop - 80,
-
-      behavior: "smooth"
-
-    });
-
-  });
+  );
 
 }
 
+
 /* =========================================================
-   NOTRE-DAME TODAY CAROUSEL (home)
+   NOTRE-DAME TODAY CAROUSEL — HOME
 ========================================================= */
 
-const todayCarousel = document.querySelector("#todayCarousel");
+const todayCarousel =
+  document.querySelector(
+    "#todayCarousel"
+  );
+
 
 if (todayCarousel) {
 
-  const todayTag = document.querySelector("#todayTag");
-  const todayTitle = document.querySelector("#todayTitle");
-  const todayPrev = document.querySelector("#todayPrev");
-  const todayNext = document.querySelector("#todayNext");
-  const todayCenterPhoto = todayCarousel.querySelector(
-    ".today-slide--center .today-photo-label"
-  );
+  const todayTag =
+    document.querySelector(
+      "#todayTag"
+    );
 
-  // Placeholder content only — replace tag/title text (and the
-  // .today-photo divs in the HTML) with your real photos & captions.
+
+  const todayTitle =
+    document.querySelector(
+      "#todayTitle"
+    );
+
+
+  const todayPrev =
+    document.querySelector(
+      "#todayPrev"
+    );
+
+
+  const todayNext =
+    document.querySelector(
+      "#todayNext"
+    );
+
+
   const todaySlides = [
-    { tag: "SPORT", title: "Un nouveau titre à écrire ici" },
-    { tag: "ACADÉMIQUE", title: "Un second titre à écrire ici" },
-    { tag: "CULTURE", title: "Un troisième titre à écrire ici" },
-    { tag: "SOLIDARITÉ", title: "Un quatrième titre à écrire ici" },
-    { tag: "ÉVÉNEMENT", title: "Un cinquième titre à écrire ici" }
+
+    {
+      tag: "SPORT",
+      title: "Un nouveau titre à écrire ici"
+    },
+
+    {
+      tag: "ACADÉMIQUE",
+      title: "Un second titre à écrire ici"
+    },
+
+    {
+      tag: "CULTURE",
+      title: "Un troisième titre à écrire ici"
+    },
+
+    {
+      tag: "SOLIDARITÉ",
+      title: "Un quatrième titre à écrire ici"
+    },
+
+    {
+      tag: "ÉVÉNEMENT",
+      title: "Un cinquième titre à écrire ici"
+    }
+
   ];
+
 
   let todayIndex = 0;
 
+
   const renderTodaySlide = () => {
 
-    const caption = todayCarousel.querySelector(".today-caption");
+    const caption =
+      todayCarousel.querySelector(
+        ".today-caption"
+      );
 
-    caption.style.opacity = "0";
+
+    if (caption) {
+
+      caption.style.opacity = "0";
+
+    }
+
 
     setTimeout(() => {
 
-      const slide = todaySlides[todayIndex];
+      const slide =
+        todaySlides[todayIndex];
 
-      todayTag.textContent = slide.tag;
-      todayTitle.textContent = slide.title;
 
-      caption.style.opacity = "1";
+      if (todayTag) {
+
+        todayTag.textContent =
+          slide.tag;
+
+      }
+
+
+      if (todayTitle) {
+
+        todayTitle.textContent =
+          slide.title;
+
+      }
+
+
+      if (caption) {
+
+        caption.style.opacity =
+          "1";
+
+      }
 
     }, 220);
 
   };
 
-  todayPrev.addEventListener("click", () => {
 
-    todayIndex =
-      (todayIndex - 1 + todaySlides.length) % todaySlides.length;
+  if (todayPrev) {
 
-    renderTodaySlide();
+    todayPrev.addEventListener(
+      "click",
+      () => {
 
-  });
+        todayIndex =
+          (
+            todayIndex
+            -
+            1
+            +
+            todaySlides.length
+          )
+          %
+          todaySlides.length;
 
-  todayNext.addEventListener("click", () => {
 
-    todayIndex =
-      (todayIndex + 1) % todaySlides.length;
+        renderTodaySlide();
 
-    renderTodaySlide();
+      }
+    );
 
-  });
+  }
+
+
+  if (todayNext) {
+
+    todayNext.addEventListener(
+      "click",
+      () => {
+
+        todayIndex =
+          (
+            todayIndex
+            +
+            1
+          )
+          %
+          todaySlides.length;
+
+
+        renderTodaySlide();
+
+      }
+    );
+
+  }
 
 }

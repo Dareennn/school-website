@@ -5585,3 +5585,475 @@ body.inner-page .nav {
 .nav-dropdown-menu {
   z-index: 1100;
 }
+
+
+/* =========================================================
+   HISTORY PAGES
+========================================================= */
+
+.history-page,
+.history-detail-page {
+  overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   HISTORY INTRO
+--------------------------------------------------------- */
+
+.history-intro {
+
+  display: grid;
+
+  grid-template-columns: 0.7fr 1.3fr;
+
+  gap: 8vw;
+
+  padding: 120px 7vw;
+
+}
+
+
+.history-intro-label {
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+
+}
+
+
+.history-intro-content {
+
+  max-width: 850px;
+
+}
+
+
+.history-lead {
+
+  margin: 0 0 35px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(28px, 3.5vw, 52px);
+
+  line-height: 1.15;
+
+}
+
+
+.history-intro-content p:not(.history-lead) {
+
+  max-width: 650px;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  opacity: 0.7;
+
+}
+
+
+/* ---------------------------------------------------------
+   HISTORY NAVIGATION
+--------------------------------------------------------- */
+
+.history-navigation {
+
+  padding: 120px 7vw;
+
+}
+
+
+.history-navigation .section-heading {
+
+  margin-bottom: 80px;
+
+}
+
+
+.history-links {
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+
+.history-link {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 70px 1fr 1fr 40px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 30px 0;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+  transition:
+    padding 0.35s ease,
+    opacity 0.35s ease;
+
+}
+
+
+.history-link:hover {
+
+  padding-left: 15px;
+
+}
+
+
+.history-link>span {
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  opacity: 0.5;
+
+}
+
+
+.history-link strong {
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(22px, 2.2vw, 34px);
+
+  font-weight: 400;
+
+}
+
+
+.history-link small {
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 13px;
+
+  opacity: 0.55;
+
+}
+
+
+.history-link em {
+
+  font-style: normal;
+
+  font-size: 20px;
+
+  text-align: right;
+
+}
+
+
+/* ---------------------------------------------------------
+   HISTORY DETAIL HERO
+--------------------------------------------------------- */
+
+.history-detail-hero {
+
+  min-height: 70vh;
+
+  padding:
+    180px 7vw 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+}
+
+
+/*
+   IMPORTANT:
+   Override the global .page-hero > div rule.
+
+   This keeps the history hero content aligned
+   with the left side of the page while still
+   allowing .page-hero.light-page to provide
+   the blue background.
+*/
+
+.history-detail-hero>div {
+
+  width: 100%;
+
+  max-width: 100%;
+
+  margin-left: 0;
+
+  margin-right: 0;
+
+}
+
+
+.history-detail-hero h1 {
+
+  margin: 25px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 10vw, 150px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+
+}
+
+
+.history-detail-hero h1 i {
+
+  font-style: italic;
+
+}
+
+
+/* ---------------------------------------------------------
+   HISTORY STORY
+--------------------------------------------------------- */
+
+.history-story {
+
+  padding: 120px 7vw 160px;
+
+}
+
+
+.history-story-content {
+
+  max-width: 850px;
+
+  margin-left: auto;
+
+  margin-right: 10vw;
+
+}
+
+
+.story-number {
+
+  display: block;
+
+  margin-bottom: 35px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+
+  opacity: 0.5;
+
+}
+
+
+.history-story h2 {
+
+  margin: 0 0 40px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(38px, 5vw, 72px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+}
+
+
+.history-story p {
+
+  max-width: 700px;
+
+  margin-bottom: 25px;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  opacity: 0.75;
+
+}
+
+
+/* ---------------------------------------------------------
+   NEXT CHAPTER
+--------------------------------------------------------- */
+
+.history-next {
+
+  padding: 80px 7vw;
+
+}
+
+
+.history-next a {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+.history-next span {
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+
+}
+
+
+.history-next strong {
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(28px, 4vw, 55px);
+
+  font-weight: 400;
+
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .history-intro {
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 80px 7vw;
+
+  }
+
+
+  .history-navigation {
+
+    padding: 80px 7vw;
+
+  }
+
+
+  .history-link {
+
+    grid-template-columns: 45px 1fr 25px;
+
+    gap: 15px;
+
+  }
+
+
+  .history-link small {
+
+    display: none;
+
+  }
+
+
+  .history-detail-hero {
+
+    min-height: 65vh;
+
+    padding:
+      150px 7vw 80px;
+
+  }
+
+
+  /*
+     Keep the override on mobile too.
+  */
+
+  .history-detail-hero>div {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-left: 0;
+
+    margin-right: 0;
+
+  }
+
+
+  .history-detail-hero h1 {
+
+    font-size: clamp(55px, 15vw, 100px);
+
+  }
+
+
+  .history-story {
+
+    padding: 80px 7vw 110px;
+
+  }
+
+
+  .history-story-content {
+
+    margin: 0;
+
+  }
+
+
+  .history-next {
+
+    padding: 60px 7vw;
+
+  }
+
+
+  .history-next a {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+}
