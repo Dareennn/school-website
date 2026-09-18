@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Demande d'admission — Notre-Dame
+  </title>
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body class="application-page">
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="application-header">
+
+
+    <a
+      href="index.html"
+      class="application-brand"
+    >
+
+      <span>
+        NOTRE-DAME
+      </span>
+
+      <small>
+        DE LA DÉLIVRANDE · Al-Daher
+      </small>
+
+    </a>
+
+
+    <div class="application-header-right">
+
+      <span>
+        DEMANDE D'ADMISSION
+      </span>
+
+      <a href="admission.html">
+        QUITTER ×
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ================= PROGRESS ================= -->
+
+  <div class="application-progress">
+
+    <div class="progress-step active">
+
+      <span>
+        01
+      </span>
+
+      <small>
+        PARENT
+      </small>
+
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-step">
+
+      <span>
+        02
+      </span>
+
+      <small>
+        ÉLÈVE
+      </small>
+
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-step">
+
+      <span>
+        03
+      </span>
+
+      <small>
+        SCOLARITÉ
+      </small>
+
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-step">
+
+      <span>
+        04
+      </span>
+
+      <small>
+        CONFIRMATION
+      </small>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= APPLICATION ================= -->
+
+  <main class="application-main">
+
+
+    <!-- STEP 1 -->
+
+    <section
+      class="application-step-content active"
+      data-step="1"
+    >
+
+      <p class="application-kicker">
+        ÉTAPE 01 / 04
+      </p>
+
+
+      <h1>
+        Commençons par<br>
+        <i>vous.</i>
+      </h1>
+
+
+      <p class="application-intro">
+
+        Nous avons besoin de quelques informations
+        concernant le parent ou responsable légal.
+
+      </p>
+
+
+      <form class="application-form">
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label for="parent-first-name">
+              Prénom
+            </label>
+
+            <input
+              id="parent-first-name"
+              name="parentFirstName"
+              type="text"
+              placeholder="Votre prénom"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="parent-last-name">
+              Nom
+            </label>
+
+            <input
+              id="parent-last-name"
+              name="parentLastName"
+              type="text"
+              placeholder="Votre nom"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="parent-email">
+            Adresse e-mail
+          </label>
+
+          <input
+            id="parent-email"
+            name="parentEmail"
+            type="email"
+            placeholder="exemple@email.com"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="parent-phone">
+            Téléphone
+          </label>
+
+          <input
+            id="parent-phone"
+            name="parentPhone"
+            type="tel"
+            placeholder="+20"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <span>
+            Vos informations restent confidentielles.
+          </span>
+
+          <button
+            type="button"
+            class="next-button"
+            data-next="2"
+          >
+
+            CONTINUER
+
+            <b>
+              →
+            </b>
+
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+
+    <!-- STEP 2 -->
+
+    <section
+      class="application-step-content"
+      data-step="2"
+    >
+
+      <p class="application-kicker">
+        ÉTAPE 02 / 04
+      </p>
+
+
+      <h1>
+        Parlons de<br>
+        <i>l'élève.</i>
+      </h1>
+
+
+      <p class="application-intro">
+
+        Quelques informations nous permettront
+        de mieux comprendre votre demande.
+
+      </p>
+
+
+      <form class="application-form">
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label for="student-first-name">
+              Prénom
+            </label>
+
+            <input
+              id="student-first-name"
+              type="text"
+              placeholder="Prénom de l'élève"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="student-last-name">
+              Nom
+            </label>
+
+            <input
+              id="student-last-name"
+              type="text"
+              placeholder="Nom de l'élève"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label for="birth-date">
+              Date de naissance
+            </label>
+
+            <input
+              id="birth-date"
+              type="date"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="gender">
+              Sexe
+            </label>
+
+            <select
+              id="gender"
+              required
+            >
+
+              <option value="">
+                Sélectionner
+              </option>
+
+              <option value="female">
+                Fille
+              </option>
+
+              <option value="male">
+                Garçon
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="back-button"
+            data-back="1"
+          >
+
+            ← RETOUR
+
+          </button>
+
+
+          <button
+            type="button"
+            class="next-button"
+            data-next="3"
+          >
+
+            CONTINUER
+
+            <b>
+              →
+            </b>
+
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+
+    <!-- STEP 3 -->
+
+    <section
+      class="application-step-content"
+      data-step="3"
+    >
+
+      <p class="application-kicker">
+        ÉTAPE 03 / 04
+      </p>
+
+
+      <h1>
+        Choisissez<br>
+        <i>votre parcours.</i>
+      </h1>
+
+
+      <p class="application-intro">
+
+        Sélectionnez le cycle scolaire
+        correspondant à votre demande.
+
+      </p>
+
+
+      <form class="application-form">
+
+
+        <div class="cycle-selection">
+
+
+          <label class="cycle-option">
+
+            <input
+              type="radio"
+              name="cycle"
+              value="maternelle"
+              required
+            >
+
+            <span>
+
+              <strong>
+                01
+              </strong>
+
+              <b>
+                Maternelle
+              </b>
+
+              <small>
+                Petite · Moyenne · Grande section
+              </small>
+
+            </span>
+
+            <i>
+              →
+            </i>
+
+          </label>
+
+
+          <label class="cycle-option">
+
+            <input
+              type="radio"
+              name="cycle"
+              value="primaire"
+            >
+
+            <span>
+
+              <strong>
+                02
+              </strong>
+
+              <b>
+                Primaire
+              </b>
+
+              <small>
+                Cycle primaire
+              </small>
+
+            </span>
+
+            <i>
+              →
+            </i>
+
+          </label>
+
+
+          <label class="cycle-option">
+
+            <input
+              type="radio"
+              name="cycle"
+              value="college"
+            >
+
+            <span>
+
+              <strong>
+                03
+              </strong>
+
+              <b>
+                Collège
+              </b>
+
+              <small>
+                Enseignement secondaire
+              </small>
+
+            </span>
+
+            <i>
+              →
+            </i>
+
+          </label>
+
+
+          <label class="cycle-option">
+
+            <input
+              type="radio"
+              name="cycle"
+              value="lycee"
+            >
+
+            <span>
+
+              <strong>
+                04
+              </strong>
+
+              <b>
+                Lycée
+              </b>
+
+              <small>
+                Enseignement secondaire
+              </small>
+
+            </span>
+
+            <i>
+              →
+            </i>
+
+          </label>
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="back-button"
+            data-back="2"
+          >
+
+            ← RETOUR
+
+          </button>
+
+
+          <button
+            type="button"
+            class="next-button"
+            data-next="4"
+          >
+
+            CONTINUER
+
+            <b>
+              →
+            </b>
+
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+
+    <!-- STEP 4 -->
+
+    <section
+      class="application-step-content"
+      data-step="4"
+    >
+
+      <p class="application-kicker">
+        ÉTAPE 04 / 04
+      </p>
+
+
+      <h1>
+        Vérifiez votre<br>
+        <i>demande.</i>
+      </h1>
+
+
+      <p class="application-intro">
+
+        Merci de vérifier les informations
+        avant de transmettre votre demande.
+
+      </p>
+
+
+      <div class="review-box">
+
+
+        <div>
+
+          <span>
+            PARENT
+          </span>
+
+          <strong id="review-parent">
+            —
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            EMAIL
+          </span>
+
+          <strong id="review-email">
+            —
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            ÉLÈVE
+          </span>
+
+          <strong id="review-student">
+            —
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            CYCLE
+          </span>
+
+          <strong id="review-cycle">
+            —
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-actions">
+
+
+        <button
+          type="button"
+          class="back-button"
+          data-back="3"
+        >
+
+          ← RETOUR
+
+        </button>
+
+
+        <button
+          type="button"
+          class="submit-button"
+          id="submitApplication"
+        >
+
+          ENVOYER LA DEMANDE
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SUCCESS -->
+
+    <section
+      class="application-success"
+      id="applicationSuccess"
+    >
+
+      <div class="success-symbol">
+        ✓
+      </div>
+
+
+      <p class="application-kicker">
+        DEMANDE ENVOYÉE
+      </p>
+
+
+      <h1>
+        Merci pour<br>
+        votre <i>confiance.</i>
+      </h1>
+
+
+      <p>
+
+        Votre demande d'admission a bien été
+        enregistrée.
+
+        Notre équipe prendra contact avec vous
+        prochainement.
+
+      </p>
+
+
+      <a
+        href="index.html"
+        class="return-home"
+      >
+
+        RETOUR À L'ACCUEIL
+
+        <span>
+          →
+        </span>
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

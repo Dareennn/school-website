@@ -1,140 +1,12 @@
-
+/* =========================================================
+   BASIC HELPERS
+========================================================= */
 
 const $ = (selector) => document.querySelector(selector);
 
 const $$ = (selector) => [
   ...document.querySelectorAll(selector)
 ];
-
-
-
-
-const headerContainer = $("#header-container");
-const footerContainer = $("#footer-container");
-const loaderContainer = $("#loader-container");
-
-
-if (headerContainer) {
-
-  headerContainer.innerHTML = `
-    <header class="nav" id="nav">
-
-      <a class="brand" href="index.html">
-
-        <span>NOTRE-DAME</span>
-
-        <em>DE LA DÉLIVRANDE · Al-Daher</em>
-
-      </a>
-
-
-      <nav class="nav-links" aria-label="Navigation principale">
-
-        <a href="index.html">Accueil</a>
-
-        <a href="histoire.html">Histoire</a>
-
-        <a href="cycles.html">Cycles</a>
-
-        <a href="vie.html">Vie de l'école</a>
-
-        <a href="actualites.html">Actualités</a>
-
-        <a href="contact.html">Contact</a>
-
-      </nav>
-
-
-      <div class="nav-right">
-
-        <a class="nav-admission" href="admission.html">
-          Admission
-          <span>↗</span>
-        </a>
-
-      </div>
-
-    </header>
-  `;
-
-}
-
-
-if (footerContainer) {
-
-  footerContainer.innerHTML = `
-    <footer>
-
-      <div class="footer-top">
-
-        <div class="footer-brand">
-          <span>NOTRE-DAME</span>
-          <em>DE LA DÉLIVRANDE · Al-Daher</em>
-        </div>
-
-        <div class="footer-tag">
-          Joie.<br>
-          Bonheur.<br>
-          Servir.
-        </div>
-
-        <div class="footer-address">
-          Daher, 5 Habib Shalaby,
-          Berket AZ Zatli,
-          Bab El Sharia,
-          Gouvernorat du Caire
-          <br>
-          (02) 2415 5192
-        </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <span>© 2026 Notre-Dame de la Délivrande</span>
-
-        <div>
-          <a href="#">Facebook</a>
-          <a href="#">YouTube</a>
-          <a href="vie.html">Galerie</a>
-        </div>
-
-        <span>Prototype</span>
-
-      </div>
-
-    </footer>
-  `;
-
-}
-
-
-if (loaderContainer) {
-
-  loaderContainer.innerHTML = `
-    <div class="loader" id="loader">
-
-      <div class="loader-inner">
-
-        <div class="school-logo">
-          <img src="images/notre_dame_school_logo.jpg" alt="Notre-Dame de la Délivrande logo">
-        </div>
-
-        <div class="school-name">NOTRE-DAME DE LA DÉLIVRANDE</div>
-
-        <strong>Al-Daher</strong>
-
-        <div class="loader-line"><i></i></div>
-
-        <small>DEPUIS 1921 · LE CAIRE</small>
-
-      </div>
-
-    </div>
-  `;
-
-}
 
 
 /* =========================================================
@@ -505,6 +377,7 @@ if (words.length) {
 
 
   setInterval(() => {
+
 
 
     if (document.hidden) {
