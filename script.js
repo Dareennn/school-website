@@ -42,8 +42,26 @@ if (headerContainer) {
 
         <a href="histoire.html">Histoire</a>
 
-        <a href="cycles.html">Cycles</a>
+<div class="nav-dropdown">
 
+  <a href="cycles.html" class="nav-dropdown-toggle">
+    Cycles
+    <span class="nav-arrow" aria-hidden="true">⌄</span>
+  </a>
+
+  <div class="nav-dropdown-menu">
+
+    <a href="maternelle.html">Maternelle</a>
+
+    <a href="primaire.html">Primaire</a>
+
+    <a href="preparatoire.html">Préparatoire</a>
+
+    <a href="secondaire.html">Secondaire</a>
+
+  </div>
+
+</div>
         <a href="vie.html">Vie de l'école</a>
 
         <a href="actualites.html">Actualités</a>
@@ -326,76 +344,150 @@ $$(".nav-links a").forEach((link) => {
 
 
 /* =========================================================
-   CUSTOM CURSOR
+   CYCLES NAVIGATION DROPDOWN
 ========================================================= */
 
-let cx = window.innerWidth / 2;
-let cy = window.innerHeight / 2;
-
-let tx = cx;
-let ty = cy;
-
-const cursor = $("#cursor");
+const cycleDropdowns =
+  $$(".nav-dropdown");
 
 
-if (cursor) {
+cycleDropdowns.forEach((dropdown) => {
 
-  window.addEventListener(
-    "mousemove",
-    (event) => {
+  const toggle =
+    dropdown.querySelector(".nav-dropdown-toggle");
 
-      tx = event.clientX;
-      ty = event.clientY;
+  const menu =
+    dropdown.querySelector(".nav-dropdown-menu");
+
+
+  if (!toggle || !menu) {
+    return;
+  }
+
+
+  /* ---------------------------------------------
+     CLICK / TAP TO OPEN
+  --------------------------------------------- */
+
+  toggle.addEventListener("click", (event) => {
+
+    /*
+       On desktop the first click opens the dropdown
+       instead of immediately navigating to cycles.html.
+
+       On the second click, the normal link works and
+       takes the user to cycles.html.
+    */
+
+    if (!dropdown.classList.contains("open")) {
+
+      event.preventDefault();
+
+      /*
+         Close any other open dropdowns.
+      */
+
+      cycleDropdowns.forEach((otherDropdown) => {
+
+        if (otherDropdown !== dropdown) {
+
+          otherDropdown.classList.remove("open");
+
+        }
+
+      });
+
+
+      dropdown.classList.add("open");
 
     }
-  );
-
-
-  (function cursorLoop() {
-
-    cx += (tx - cx) * .18;
-    cy += (ty - cy) * .18;
-
-    cursor.style.left =
-      cx + "px";
-
-    cursor.style.top =
-      cy + "px";
-
-    requestAnimationFrame(
-      cursorLoop
-    );
-
-  })();
-
-
-  $$(
-    "a, button, .cycle-card, .news article, .cycle-option"
-  ).forEach((element) => {
-
-    element.addEventListener(
-      "mouseenter",
-      () => {
-
-        cursor.classList.add("big");
-
-      }
-    );
-
-
-    element.addEventListener(
-      "mouseleave",
-      () => {
-
-        cursor.classList.remove("big");
-
-      }
-    );
 
   });
 
-}
 
+  /* ---------------------------------------------
+     KEYBOARD ACCESSIBILITY
+  --------------------------------------------- */
+
+  toggle.addEventListener("keydown", (event) => {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
+      event.preventDefault();
+
+      toggle.click();
+
+    }
+
+  });
+
+
+  /* ---------------------------------------------
+     PREVENT DROPDOWN FROM CLOSING WHEN CLICKED
+  --------------------------------------------- */
+
+  menu.addEventListener("click", (event) => {
+
+    /*
+       Stage links should navigate normally.
+
+       We intentionally do NOT preventDefault here.
+    */
+
+    const stageLink =
+      event.target.closest("a");
+
+    if (stageLink) {
+
+      dropdown.classList.remove("open");
+
+    }
+
+  });
+
+});
+
+
+/* ---------------------------------------------
+   CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+--------------------------------------------- */
+
+document.addEventListener("click", (event) => {
+
+  cycleDropdowns.forEach((dropdown) => {
+
+    if (!dropdown.contains(event.target)) {
+
+      dropdown.classList.remove("open");
+
+    }
+
+  });
+
+});
+
+
+/* ---------------------------------------------
+   CLOSE DROPDOWN WITH ESCAPE
+--------------------------------------------- */
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key !== "Escape") {
+    return;
+  }
+
+
+  cycleDropdowns.forEach((dropdown) => {
+
+    dropdown.classList.remove("open");
+
+  });
+
+});
 
 /* =========================================================
    TIMELINE

@@ -1,11 +1,7 @@
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
 
   --blue: #243f91;
-  --red: #b72d34;
+  --red: #f09ba0;
   --navy: #172c68;
 
   --cream: #f5f4ef;
@@ -20,10 +16,6 @@
 
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
   box-sizing: border-box;
@@ -64,10 +56,6 @@ select {
 }
 
 
-/* =========================================================
-   LOADER
-========================================================= */
-
 .loader {
   position: fixed;
   inset: 0;
@@ -93,8 +81,8 @@ select {
 }
 
 .school-logo {
-  width: 65px;
-  height: 65px;
+  width: 77px;
+  height: 77px;
 
   margin: 0 auto 12px;
 }
@@ -159,10 +147,6 @@ select {
 }
 
 
-/* =========================================================
-   GLOBAL EFFECTS
-========================================================= */
-
 .progress {
   height: 3px;
 
@@ -195,61 +179,8 @@ select {
 }
 
 
-/* =========================================================
-   CUSTOM CURSOR
-========================================================= */
-
-.cursor {
-  position: fixed;
-
-  z-index: 1100;
-
-  width: 30px;
-  height: 30px;
-
-  border: 1px solid rgba(183, 45, 52, .8);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  transform: translate(-50%, -50%);
-
-  transition: .25s;
-}
-
-.cursor span {
-  width: 5px;
-  height: 5px;
-
-  background: var(--red);
-
-  border-radius: 50%;
-
-  display: block;
-
-  margin: auto;
-}
-
-.cursor.big {
-  width: 62px;
-  height: 62px;
-
-  background: rgba(255, 255, 255, .08);
-}
-
-@media(pointer:coarse) {
-
-  .cursor {
-    display: none;
-  }
-
-}
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
 
 .nav {
   position: fixed;
@@ -362,7 +293,7 @@ select {
 .nav-links a:hover,
 .nav-links a.active {
 
-  color: #f19aa0;
+  color: #f09ba0;
 }
 
 .nav-links a:hover::after,
@@ -399,7 +330,7 @@ select {
 
 .nav-admission span {
 
-  color: #f19aa0;
+  color: #f09ba0;
 
   margin-left: 8px;
 }
@@ -453,11 +384,7 @@ select {
 
   transform: scale(1.08);
 
-  /*
-    New:
-    subtle blur so text feels integrated
-    into the photography.
-  */
+
 
   filter: blur(2.5px);
 
@@ -620,8 +547,6 @@ select {
 }
 
 
-/* Discover circular button */
-
 .circle-link {
 
   width: 92px;
@@ -668,8 +593,6 @@ select {
   color: #fff;
 }
 
-
-/* Apply button */
 
 .apply-hero {
 
@@ -3566,13 +3489,13 @@ body.inner-page .nav {
 
   position: relative;
 
-  padding: 190px 7vw 110px;
+  padding: clamp(120px, 15vh, 165px) 7vw clamp(42px, 5vh, 70px);
 
   display: flex;
 
   align-items: flex-end;
 
-  min-height: 56vh;
+  min-height: auto;
 }
 
 .page-hero>div {
@@ -3607,6 +3530,11 @@ body.inner-page .nav {
   margin: 0;
 }
 
+
+/* =========================================================
+   BLUE PAGE HERO
+========================================================= */
+
 .page-hero.blue-page {
 
   background: var(--blue);
@@ -3616,7 +3544,7 @@ body.inner-page .nav {
 
 .page-hero.blue-page h1 i {
 
-  color: #f0a0a5;
+  color: #f09ba0;
 }
 
 .page-hero.blue-page p {
@@ -3624,23 +3552,39 @@ body.inner-page .nav {
   color: #ccd3ea;
 }
 
+
+/* =========================================================
+   CYCLES HERO
+========================================================= */
+
 .page-hero.light-page {
 
-  background: var(--cream);
+  background: var(--blue);
 
-  color: var(--ink);
+  color: #fff;
+}
+
+.page-hero.light-page h1 {
+
+  color: #fff;
 }
 
 .page-hero.light-page h1 i {
 
-  color: var(--red);
+  color: #f09ba0;
+
+  font-style: italic;
 }
 
 .page-hero.light-page p {
 
-  color: #626772;
+  color: rgba(255, 255, 255, .78);
 }
 
+.page-hero.light-page .kicker {
+
+  color: rgba(255, 255, 255, .78);
+}
 
 /* =========================================================
    TIMELINE  (histoire)
@@ -3784,29 +3728,39 @@ body.inner-page .nav {
 
 .cycles {
 
-  padding: 120px 7vw 140px;
+  padding: clamp(34px, 4vw, 58px) 7vw clamp(80px, 8vw, 120px);
 }
 
 .cycle-grid {
 
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 4vw 3vw;
+  gap: clamp(24px, 3vw, 42px);
 
-  max-width: 1180px;
+  max-width: 1080px;
 
-  margin: auto;
+  margin: 0 auto;
 }
 
 .cycle-card {
+
+  display: flex;
+
+  flex-direction: column;
 
   background: #fff;
 
   border: 1px solid #e0dfd8;
 
-  transition: transform .25s, box-shadow .3s;
+  border-radius: 2px;
+
+  overflow: hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .3s ease;
 
   will-change: transform;
 }
@@ -3818,9 +3772,20 @@ body.inner-page .nav {
 
 .cycle-image {
 
-  height: 290px;
+  height: clamp(220px, 22vw, 290px);
 
   overflow: hidden;
+
+  flex: 0 0 auto;
+}
+
+.cycle-image a {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
 }
 
 .cycle-image img {
@@ -3835,9 +3800,17 @@ body.inner-page .nav {
 
 .cycle-info {
 
-  position: relative;
+  display: flex;
 
-  padding: 34px 34px 38px;
+  flex-direction: column;
+
+  align-items: center;
+
+  flex: 1;
+
+  padding: 26px 30px 30px;
+
+  text-align: center;
 }
 
 .cycle-info span {
@@ -3853,12 +3826,18 @@ body.inner-page .nav {
 
   font: 500 clamp(24px, 2.4vw, 32px) var(--display);
 
-  letter-spacing: -.02em;
+  letter-spacing: -.025em;
 
-  margin: 14px 0 12px;
+  margin: 0 0 12px;
+
+  text-align: center;
 }
 
 .cycle-info p {
+
+  width: 100%;
+
+  max-width: 420px;
 
   font-size: 14px;
 
@@ -3866,31 +3845,89 @@ body.inner-page .nav {
 
   color: #626772;
 
-  margin: 0;
+  margin: 0 auto;
 
-  max-width: 420px;
+  text-align: center;
 }
 
-.cycle-info b {
+.cycle-apply {
 
-  position: absolute;
+  display: inline-flex;
 
-  right: 30px;
+  align-items: center;
 
-  bottom: 34px;
+  justify-content: center;
 
-  font-size: 19px;
+  gap: 10px;
 
-  font-weight: 400;
+  min-width: 128px;
 
-  color: var(--red);
+  margin-top: 22px;
 
-  transition: .25s;
+  padding: 11px 20px;
+
+  border: 1px solid var(--red);
+
+  border-radius: 999px;
+
+  background: var(--red);
+
+  color: #fff;
+
+  font: 600 9px var(--mono);
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  box-shadow: 0 8px 20px -14px rgba(183, 45, 52, .8);
+
+  cursor: pointer;
+
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    color .25s ease,
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
-.cycle-card:hover .cycle-info b {
+.cycle-apply::after {
 
-  transform: translate(5px, -5px);
+  content: "↗";
+
+  font-size: 13px;
+
+  line-height: 1;
+
+  transition: transform .25s ease;
+}
+
+.cycle-apply:hover {
+
+  background: var(--blue);
+
+  border-color: var(--blue);
+
+  color: #fff;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 24px -14px rgba(36, 63, 145, .75);
+}
+
+.cycle-apply:hover::after {
+
+  transform: translate(2px, -2px);
+}
+
+.cycle-apply:focus-visible {
+
+  outline: 3px solid rgba(183, 45, 52, .25);
+
+  outline-offset: 4px;
 }
 
 
@@ -4606,13 +4643,100 @@ body.inner-page .nav {
 
     padding-right: 6vw;
   }
+
+  .cycles {
+
+    padding-top: 34px;
+
+    padding-bottom: 80px;
+  }
+
+  .cycle-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px 22px;
+  }
+
+  .cycle-image {
+
+    height: 240px;
+  }
+
+  .cycle-info {
+
+    padding: 24px 22px 28px;
+  }
 }
 
 @media(max-width:650px) {
 
+  .page-hero {
+
+    padding:
+      clamp(105px, 18vw, 135px) 6vw 30px;
+  }
+
+  .page-hero h1 {
+
+    font-size: clamp(42px, 13vw, 64px);
+
+    margin-bottom: 18px;
+  }
+
+  .page-hero p {
+
+    font-size: 14px;
+
+    max-width: 430px;
+  }
+
+  .cycles {
+
+    padding:
+      28px 6vw 70px;
+  }
+
+  .cycle-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    max-width: 520px;
+  }
+
   .cycle-image {
 
-    height: 220px;
+    height: clamp(200px, 58vw, 280px);
+  }
+
+  .cycle-info {
+
+    padding: 22px 20px 26px;
+  }
+
+  .cycle-info h3 {
+
+    font-size: clamp(26px, 8vw, 34px);
+
+    margin-bottom: 10px;
+  }
+
+  .cycle-info p {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .cycle-apply {
+
+    min-width: 132px;
+
+    margin-top: 18px;
+
+    padding: 11px 18px;
   }
 
   .news-image {
@@ -5219,4 +5343,245 @@ body.inner-page .nav {
 
     font-size: 13px;
   }
+}
+
+/* =========================================================
+   CYCLES NAVIGATION DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Cycles link */
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+
+/* Small arrow */
+
+.nav-arrow {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+
+/* Rotate arrow when dropdown is open */
+
+.nav-dropdown.open .nav-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* Dropdown panel */
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+
+  min-width: 190px;
+
+  padding: 10px;
+
+  background: var(--cream);
+  border: 1px solid rgba(23, 27, 39, .10);
+
+  box-shadow: 0 18px 45px rgba(23, 44, 104, .14);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .22s ease,
+    transform .22s ease,
+    visibility .22s ease;
+
+  z-index: 100;
+}
+
+
+/* Small visual connection between nav and dropdown */
+
+.nav-dropdown-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -7px;
+  left: 50%;
+
+  width: 13px;
+  height: 13px;
+
+  background: var(--cream);
+
+  border-left: 1px solid rgba(23, 27, 39, .10);
+  border-top: 1px solid rgba(23, 27, 39, .10);
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* Individual stage links */
+
+.nav-dropdown-menu a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 11px 13px;
+
+  color: var(--ink);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    padding-left .2s ease;
+}
+
+
+/* Hover on stage */
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  background: var(--blue);
+  color: #fff;
+  padding-left: 17px;
+}
+
+
+/* OPEN STATE
+   Added by JavaScript when user clicks Cycles */
+
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* DESKTOP HOVER SUPPORT
+   The dropdown also opens naturally when hovering Cycles */
+
+@media (min-width: 901px) {
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 8px;
+
+    padding: 5px 0;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+
+    transform: none;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition:
+      opacity .2s ease,
+      max-height .25s ease,
+      visibility .2s ease;
+  }
+
+  .nav-dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: none;
+
+    max-height: 300px;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 10px 15px;
+  }
+
+}
+
+/* =========================================================
+   GLOBAL NAV DROPDOWN — ALWAYS AVAILABLE
+========================================================= */
+
+.nav {
+  z-index: 1000;
+}
+
+.nav-links {
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-dropdown {
+  position: relative;
+  z-index: 1002;
+}
+
+.nav-dropdown-menu {
+  z-index: 1100;
 }
